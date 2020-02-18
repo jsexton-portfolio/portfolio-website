@@ -1,22 +1,22 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Footer from './Footer/Footer'
-import Home from './Home/Home'
-import NavBar from './NavBar/NavBar'
-import NotFound from './NotFound/NotFound'
+import { BrowserRouter } from 'react-router-dom'
+import { Router } from '../router/Router'
+import { Footer } from './Footer/Footer'
+import { NavBar } from './NavBar/NavBar'
 
 export const App = () => {
   return (
-    <Router>
-      <NavBar />
+    <BrowserRouter>
+      <div>
+        <NavBar />
 
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route component={NotFound} />
-      </Switch>
+        <main>
+          <Router />
+        </main>
 
-      <Footer />
-    </Router>
+        <Footer />
+      </div>
+    </BrowserRouter>
   )
 }
 

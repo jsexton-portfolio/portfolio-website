@@ -6,7 +6,7 @@ import { useStyles } from './style'
 // Design decision to make project link required.
 // If project is not viewable from a link, it should not be listed.
 
-const ProjectCard = ({ title, description, technologies, projectLink }) => {
+export const ProjectCard = ({ title, description, technologies, projectLink }) => {
   const classes = useStyles()
 
   return (
@@ -41,5 +41,3 @@ ProjectCard.propTypes = {
   technologies: PropTypes.array.isRequired,
   projectLink: PropTypes.string.isRequired
 }
-
-export default ProjectCard

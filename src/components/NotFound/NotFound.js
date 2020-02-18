@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useStyles } from './style'
 
-const NotFound = () => {
+export const NotFound = () => {
   const classes = useStyles()
 
   return (
@@ -16,5 +16,3 @@ const NotFound = () => {
     </Container>
   )
 }
-
-export default NotFound

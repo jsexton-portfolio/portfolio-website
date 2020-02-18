@@ -98,7 +98,7 @@ const projects = [
   }
 ]
 
-const Home = (props) => {
+export const Home = (props) => {
   const classes = useStyles()
 
   return (
@@ -135,5 +135,3 @@ const Home = (props) => {
     </div>
   )
 }
-
-export default Home

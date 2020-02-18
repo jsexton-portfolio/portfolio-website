@@ -40,7 +40,7 @@ const navigationItems = [
   }
 ]
 
-const NavBar = () => {
+export const NavBar = () => {
   const classes = useStyles()
 
   const [state, setState] = React.useState({
@@ -98,5 +98,3 @@ const NavBar = () => {
     </div>
   )
 }
-
-export default NavBar

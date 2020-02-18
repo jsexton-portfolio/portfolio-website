@@ -2,7 +2,7 @@ import { GridList, GridListTile } from '@material-ui/core'
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth'
 import PropTypes from 'prop-types'
 import React from 'react'
-import ProjectCard from '../ProjectCard/ProjectCard'
+import { ProjectCard } from '../ProjectCard/ProjectCard'
 import { useStyles } from './style'
 
 const CareerSection = ({ width, projects }) => {
