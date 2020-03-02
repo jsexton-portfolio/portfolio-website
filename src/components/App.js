@@ -7,15 +7,9 @@ import { NavBar } from './NavBar/NavBar'
 export const App = () => {
   return (
     <BrowserRouter>
-      <div>
-        <NavBar />
-
-        <main>
-          <Router />
-        </main>
-
-        <Footer />
-      </div>
+      <NavBar />
+      <Router />
+      <Footer />
     </BrowserRouter>
   )
 }
