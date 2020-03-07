@@ -26,7 +26,7 @@ const CareerSection = ({ width, projects }) => {
 
   return (
     <div>
-      <Typography variant='h2'>Career</Typography>
+      <Typography variant='h3'>Career</Typography>
       <Typography paragraph={true}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
