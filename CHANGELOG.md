@@ -1,3 +1,5 @@
+# 0.1.1
+- Fixed bug not allowing project cards on home page to be fully responsive.
 # 0.1.0
 - Added initial project infrastructure
 - Added material-ui dependencies
