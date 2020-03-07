@@ -1,4 +1,4 @@
-import { GridList, GridListTile } from '@material-ui/core'
+import { GridList, GridListTile, Typography } from '@material-ui/core'
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -26,11 +26,11 @@ const CareerSection = ({ width, projects }) => {
 
   return (
     <div>
-      <h1 className={classes.headerText}>Career</h1>
-      <p className={classes.paragraphText}>
+      <Typography variant='h2'>Career</Typography>
+      <Typography paragraph={true}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
+      </Typography>
       <GridList cols={getGridListCols()} className={classes.projects} cellHeight={'auto'}>
         {projects.map(card => (
           <GridListTile key={card.title} cols={1}>

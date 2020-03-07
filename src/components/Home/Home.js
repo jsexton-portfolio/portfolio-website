@@ -1,50 +1,8 @@
-import { Button, Container } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
+import { Button, Container, Typography } from '@material-ui/core'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import CareerSection from './CareerSection/CareerSection'
-
-const useStyles = makeStyles(theme => ({
-  imageContainer: {
-    position: 'relative',
-    textAlign: 'center',
-    color: 'white'
-  },
-  heroImage: {
-    width: '100vw',
-    maxHeight: 800,
-    display: 'block',
-    height: 'auto'
-  },
-  heroText: {
-    fontSize: 60,
-    position: 'absolute',
-    top: '35%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)'
-  },
-  sectionContainer: {
-    textAlign: 'center',
-    padding: 50
-  },
-  headerText: {
-    fontSize: 35
-  },
-  paragraphText: {
-    fontSize: 25
-  },
-  link: {
-    textDecoration: 'none'
-  },
-  button: {
-    backgroundColor: 'black',
-    color: 'white',
-    '&:hover': {
-      backgroundColor: '#333',
-      boxShadow: 'none'
-    }
-  }
-}))
+import { useStyles } from './style'
 
 const projects = [
   {
@@ -110,10 +68,10 @@ export const Home = (props) => {
       </div>
 
       <Container className={classes.sectionContainer}>
-        <h1 className={classes.headerText}>About Me</h1>
-        <p className={classes.paragraphText}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <Typography variant='h2'>About Me</Typography>
+        <Typography paragraph={true}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </Typography>
         <Link to='/about' className={classes.link}>
           <Button className={classes.button}>Read More</Button>
         </Link>
@@ -124,10 +82,12 @@ export const Home = (props) => {
       </Container>
 
       <Container className={classes.sectionContainer}>
-        <h1 className={classes.headerText}>Contact</h1>
-        <p className={classes.paragraphText}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+        <Typography variant='h2'>
+          Contact
+        </Typography>
+        <Typography paragraph={true}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </Typography>
         <Link to='/contact' className={classes.link}>
           <Button className={classes.button}>Contact Me</Button>
         </Link>
