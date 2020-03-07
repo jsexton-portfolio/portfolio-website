@@ -64,7 +64,7 @@ export const Home = (props) => {
       <div className={classes.imageContainer}>
         <img className={classes.heroImage} src='/hero-sand.jpg' alt='Hero'></img>
 
-        <div className={classes.heroText}>Justin Sexton</div>
+        <Typography className={classes.heroText} variant='h2'>Justin Sexton</Typography>
       </div>
 
       <Container className={classes.sectionContainer}>

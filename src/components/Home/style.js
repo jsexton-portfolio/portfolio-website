@@ -13,7 +13,6 @@ export const useStyles = makeStyles(theme => ({
     height: 'auto'
   },
   heroText: {
-    fontSize: 60,
     position: 'absolute',
     top: '35%',
     left: '50%',
