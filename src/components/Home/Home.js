@@ -1,6 +1,7 @@
-import { Button, Container, Typography } from '@material-ui/core'
+import { Container, Typography } from '@material-ui/core'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { PortfolioButton } from '../PortfolioButton/PortfolioButton'
 import CareerSection from './CareerSection/CareerSection'
 import { useStyles } from './style'
 
@@ -73,7 +74,7 @@ export const Home = (props) => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </Typography>
         <Link to='/about' className={classes.link}>
-          <Button className={classes.button}>Read More</Button>
+          <PortfolioButton>Read More</PortfolioButton>
         </Link>
       </Container>
 
@@ -89,7 +90,7 @@ export const Home = (props) => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </Typography>
         <Link to='/contact' className={classes.link}>
-          <Button className={classes.button}>Contact Me</Button>
+          <PortfolioButton>Contact Me</PortfolioButton>
         </Link>
       </Container>
     </div>

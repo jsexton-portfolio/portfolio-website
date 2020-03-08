@@ -24,13 +24,5 @@ export const useStyles = makeStyles(theme => ({
   },
   link: {
     textDecoration: 'none'
-  },
-  button: {
-    backgroundColor: 'black',
-    color: 'white',
-    '&:hover': {
-      backgroundColor: '#333',
-      boxShadow: 'none'
-    }
   }
 }))

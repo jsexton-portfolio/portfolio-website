@@ -21,7 +21,7 @@ export const Footer = () => {
       </Container>
 
       <Typography>
-        Last Updated: 2020/03/07
+        Last Updated: 2020/03/08
       </Typography>
       <Typography>
         &copy; 2020 Justin Sexton
