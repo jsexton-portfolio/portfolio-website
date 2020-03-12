@@ -1,3 +1,5 @@
+# 0.1.2
+- Added Justin Logo to website
 # 0.1.1
 - Fixed bug not allowing project cards on home page to be fully responsive.
 # 0.1.0
