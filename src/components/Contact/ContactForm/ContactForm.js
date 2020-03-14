@@ -88,7 +88,7 @@ export const ContactForm = ({
           <ContactSelect
             id='reason'
             name='reason'
-            label='Purpose'
+            label='Reason'
             selections={reasons}
             fullWidth
             required
