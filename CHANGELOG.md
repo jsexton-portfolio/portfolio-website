@@ -1,3 +1,5 @@
+# 0.2.1
+- Fixed contact form select input label. Changed from 'Purpose' to 'Reason'
 # 0.2.0
 - Added contact page to website
   - Form validation
