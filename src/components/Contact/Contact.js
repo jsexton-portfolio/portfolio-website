@@ -19,7 +19,7 @@ export const Contact = () => {
   }
 
   const handleFormSubmission = (values, actions) => {
-    console.log('test')
+    // TODO: Integrate with service
 
     setActiveComponent('submitting')
 
