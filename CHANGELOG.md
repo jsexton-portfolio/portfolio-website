@@ -1,3 +1,11 @@
+# 0.2.0
+- Added contact page to website
+  - Form validation
+    - Name is required
+    - Email is required and must be correctly formatted
+    - Contact reason is required
+    - Contact message is required and must be between 50 and 1000 characters
+  - No API currently exists so page is not integrated with contact service.
 # 0.1.2
 - Added Justin Logo to website
 # 0.1.1
