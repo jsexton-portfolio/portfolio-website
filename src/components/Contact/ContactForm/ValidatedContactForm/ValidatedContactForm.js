@@ -1,6 +1,7 @@
 import { Formik } from 'formik'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { useSelector } from 'react-redux'
 import * as Yup from 'yup'
 import { ContactForm } from '../ContactForm'
 
@@ -15,9 +16,9 @@ const contactSchema = Yup.object().shape({
     .required()
 })
 
-const initialValues = { name: '', email: '', phone: '', reason: '', message: '' }
-
 export const ValidatedContactForm = ({ onSubmit }) => {
+  const initialValues = useSelector(state => state.contactForm)
+
   return (
     <Formik
       initialValues={initialValues}

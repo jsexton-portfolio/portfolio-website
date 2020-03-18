@@ -1,6 +1,8 @@
 import { Grid, TextField } from '@material-ui/core'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import formActions from '../../../actions/formActions'
 import { PortfolioButton } from '../../PortfolioButton/PortfolioButton'
 import { ContactSelect } from './ContactSelect/ContactSelect'
 import { useStyles } from './style'
@@ -25,9 +27,23 @@ export const ContactForm = ({
   handleSubmit
 }) => {
   const classes = useStyles()
+  const dispatch = useDispatch()
+
+  const handleFieldChange = (event) => {
+    const value = {}
+    value[event.target.name] = event.target.value
+
+    dispatch(formActions.update(value))
+    handleChange(event)
+  }
+
+  const handleFormSubmit = () => {
+    handleSubmit()
+    dispatch(formActions.clear())
+  }
 
   return (
-    <form noValidate onSubmit={handleSubmit}>
+    <form noValidate onSubmit={handleFormSubmit}>
       <Grid container justify='center' direction='column'>
 
         <Grid item className={classes.formItem}>
@@ -44,7 +60,7 @@ export const ContactForm = ({
             value={values.name}
             helperText={touched.name ? errors.name : ''}
             error={Boolean(touched.name && errors.name)}
-            onChange={handleChange}
+            onChange={(event) => handleFieldChange(event)}
             onBlur={handleBlur}
           />
         </Grid>
@@ -62,7 +78,7 @@ export const ContactForm = ({
             value={values.email}
             helperText={touched.email ? errors.email : ''}
             error={Boolean(touched.email && errors.email)}
-            onChange={handleChange}
+            onChange={(event) => handleFieldChange(event)}
             onBlur={handleBlur}
           />
         </Grid>
@@ -79,7 +95,7 @@ export const ContactForm = ({
             value={values.phone}
             helperText={touched.phone ? errors.phone : ''}
             error={Boolean(touched.phone && errors.phone)}
-            onChange={handleChange}
+            onChange={(event) => handleFieldChange(event)}
             onBlur={handleBlur}
           />
         </Grid>
@@ -96,7 +112,7 @@ export const ContactForm = ({
             value={values.reason}
             helperText={touched.reason ? errors.reason : ''}
             error={Boolean(touched.reason && errors.reason)}
-            onChange={handleChange}
+            onChange={(event) => handleFieldChange(event)}
             onBlur={handleBlur}
           />
         </Grid>
@@ -114,7 +130,7 @@ export const ContactForm = ({
             value={values.message}
             helperText={touched.message ? errors.message : ''}
             error={Boolean(touched.message && errors.message)}
-            onChange={handleChange}
+            onChange={(event) => handleFieldChange(event)}
             onBlur={handleBlur}
           />
         </Grid>
@@ -124,7 +140,7 @@ export const ContactForm = ({
           This is a problem because when clicking away from the label on the button text appears lowering where the button is
           rendered on the screen and moving the button away from the cursor. If the cursor is not in the button when it re-renders,
           correct validation functionality will not occur */}
-          <PortfolioButton type='submit' onMouseDown={handleSubmit}>Submit</PortfolioButton>
+          <PortfolioButton type='submit' onMouseDown={handleFormSubmit}>Submit</PortfolioButton>
         </Grid>
       </Grid>
     </form>

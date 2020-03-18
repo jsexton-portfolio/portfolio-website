@@ -12,12 +12,13 @@ export const ContactSelect = ({
   onChange,
   onBlur,
   error,
+  value = '',
   className,
   ...props
 }) => {
   const classes = useStyles()
 
-  const [value, setValue] = React.useState('')
+  const [currentValue, setCurrentValue] = React.useState(value)
   const [labelWidth, setLabelWidth] = React.useState(0)
   const [open, setOpen] = React.useState(false)
 
@@ -28,8 +29,8 @@ export const ContactSelect = ({
   }, [])
 
   const handleSelectionChange = (event) => {
-    const value = event.target.value
-    setValue(value)
+    const newValue = event.target.value
+    setCurrentValue(newValue)
     onChange(event)
   }
 
@@ -42,7 +43,7 @@ export const ContactSelect = ({
         id={id}
         name={name}
         labelId="contact-select-label"
-        value={value}
+        value={currentValue}
         onOpen={() => setOpen(true)}
         onClose={() => setOpen(false)}
         onChange={handleSelectionChange}
@@ -69,5 +70,6 @@ ContactSelect.propTypes = {
   className: PropTypes.string,
   required: PropTypes.bool,
   error: PropTypes.bool,
+  value: PropTypes.string,
   onBlur: PropTypes.func
 }
