@@ -1,3 +1,5 @@
+# 0.2.2
+- Contact form state is now persisted and will maintain when navigating away from contact form
 # 0.2.1
 - Fixed contact form select input label. Changed from 'Purpose' to 'Reason'
 # 0.2.0
