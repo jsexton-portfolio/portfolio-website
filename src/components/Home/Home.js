@@ -2,7 +2,7 @@ import { Container, Typography } from '@material-ui/core'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { PortfolioButton } from '../PortfolioButton/PortfolioButton'
-import CareerSection from './CareerSection/CareerSection'
+import { CareerSection } from './CareerSection/CareerSection'
 import { useStyles } from './style'
 
 const projects = [

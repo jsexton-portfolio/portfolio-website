@@ -1,11 +1,10 @@
 import { Container, Grid, Typography } from '@material-ui/core'
-import withWidth from '@material-ui/core/withWidth'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { ProjectCard } from '../ProjectCard/ProjectCard'
+import { ProjectSummaryCard } from '../ProjectSummaryCard/ProjectSummaryCard'
 import { useStyles } from './style'
 
-const CareerSection = ({ width, projects }) => {
+export const CareerSection = ({ projects }) => {
   const classes = useStyles()
 
   return (
@@ -18,11 +17,12 @@ const CareerSection = ({ width, projects }) => {
       <Grid container spacing={5} justify='center' className={classes.projects}>
         {projects.map(card => (
           <Grid key={card.title} item >
-            <ProjectCard
+            <ProjectSummaryCard
               title={card.title}
               description={card.description}
               technologies={card.technologies}
               projectLink={card.projectLink}
+              elevation={5}
             />
           </Grid>
         ))}
@@ -32,8 +32,5 @@ const CareerSection = ({ width, projects }) => {
 }
 
 CareerSection.propTypes = {
-  projects: PropTypes.array.isRequired,
-  width: PropTypes.string.isRequired
+  projects: PropTypes.array.isRequired
 }
-
-export default withWidth()(CareerSection)
