@@ -48,7 +48,10 @@ export const ProjectCard = ({
         <Grid container style={{ marginTop: 15 }} spacing={1}>
           {technologies.map((technology, index) =>
             <Grid item key={index}>
-              <PortfolioChip technology={technology} />
+              <PortfolioChip
+                technology={technology}
+                variant="outlined"
+                size="medium" />
             </Grid>
           )}
         </Grid>

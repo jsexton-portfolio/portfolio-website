@@ -16,8 +16,6 @@ export const PortfolioChip = ({
       style= {{ textDecoration: 'none' }}
     >
       <Chip
-        variant="outlined"
-        size="medium"
         label={name}
         clickable
         {...other}
