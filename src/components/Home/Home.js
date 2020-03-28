@@ -1,8 +1,9 @@
 import { Container, Typography } from '@material-ui/core'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { technologies } from '../../util/technologies'
 import { PortfolioButton } from '../PortfolioButton/PortfolioButton'
-import CareerSection from './CareerSection/CareerSection'
+import { CareerSection } from './CareerSection/CareerSection'
 import { useStyles } from './style'
 
 const projects = [
@@ -10,14 +11,8 @@ const projects = [
     title: 'Project One',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     technologies: [
-      {
-        name: 'Java',
-        link: 'https://en.wikipedia.org/wiki/Java_(programming_language)'
-      },
-      {
-        name: 'Processing',
-        link: ''
-      }
+      technologies.JAVASCRIPT,
+      technologies.MONGO
     ],
     projectLink: ''
   },
@@ -25,14 +20,8 @@ const projects = [
     title: 'Project Two',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     technologies: [
-      {
-        name: 'Java',
-        link: 'https://en.wikipedia.org/wiki/Java_(programming_language)'
-      },
-      {
-        name: 'Processing',
-        link: ''
-      }
+      technologies.KOTLIN,
+      technologies.MICRONAUT
     ],
     projectLink: ''
   },
@@ -40,18 +29,8 @@ const projects = [
     title: 'Project Three',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     technologies: [
-      {
-        name: 'Java',
-        link: 'https://en.wikipedia.org/wiki/Java_(programming_language)'
-      },
-      {
-        name: 'Processing',
-        link: ''
-      },
-      {
-        name: 'JavaScript',
-        link: ''
-      }
+      technologies.JAVA,
+      technologies.TYPESCRIPT
     ],
     projectLink: ''
   }

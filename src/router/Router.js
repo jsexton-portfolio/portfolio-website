@@ -4,6 +4,7 @@ import { About } from '../components/About/About'
 import { Contact } from '../components/Contact/Contact'
 import { Home } from '../components/Home/Home'
 import { NotFound } from '../components/NotFound/NotFound'
+import { Career } from '../components/Career/Career'
 
 export const Router = () => {
   return (
@@ -20,6 +21,7 @@ export const Router = () => {
         />
       )} />
       <Route path='/about' component={About} />
+      <Route path='/career' component={Career} />
       <Route path='/contact' component={Contact} />
       <Route component={NotFound} />
     </Switch>
