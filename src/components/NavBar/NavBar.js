@@ -59,7 +59,7 @@ export const NavBar = () => {
     <div className={classes.root}>
       <AppBar position='static' className={classes.bar}>
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h5" className={classes.title}>
             <Link to='/' className={classes.linkTitle}>Justin Sexton</Link>
           </Typography>
 
