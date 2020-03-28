@@ -2,11 +2,8 @@ import { Container, Grid, Typography } from '@material-ui/core'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { ProjectSummaryCard } from '../ProjectSummaryCard/ProjectSummaryCard'
-import { useStyles } from './style'
 
 export const CareerSection = ({ projects }) => {
-  const classes = useStyles()
-
   return (
     <Container>
       <Typography variant='h3'>Career</Typography>
@@ -14,7 +11,7 @@ export const CareerSection = ({ projects }) => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </Typography>
-      <Grid container spacing={5} justify='center' className={classes.projects}>
+      <Grid container spacing={5} justify='center' style={{ marginTop: 75 }}>
         {projects.map(card => (
           <Grid key={card.title} item >
             <ProjectSummaryCard
