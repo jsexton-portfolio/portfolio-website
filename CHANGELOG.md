@@ -1,3 +1,7 @@
+# 0.3.1
+
+- Project Summary Cards on home page now elevate when moused over
+
 # 0.3.0
 
 - Added career page
