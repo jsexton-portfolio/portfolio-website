@@ -32,17 +32,12 @@ export const ProjectCard = ({
       />
 
       <CardContent>
-        <Typography variant='h5'>
-            Description
-        </Typography>
-        <Typography>
-          { description }
-        </Typography>
+        {description}
 
-        <Divider style={{ marginTop: 15, height: 2 }}/>
+        <Divider style={{ marginTop: 15, height: 2 }} />
 
         <Typography variant='h5' style={{ marginTop: 10 }}>
-            Technologies
+          Technologies
         </Typography>
 
         <Grid container style={{ marginTop: 15 }} spacing={1}>
@@ -56,14 +51,14 @@ export const ProjectCard = ({
           )}
         </Grid>
 
-        <ConditionalRender condition={linkExists } render={() =>
+        <ConditionalRender condition={linkExists} render={() =>
           <>
-            <Divider style={{ marginTop: 15, height: 2 }}/>
+            <Divider style={{ marginTop: 15, height: 2 }} />
             <PortfolioButton target="_blank" href={link.value} style={{ marginTop: 15 }}>
               {link.name}
             </PortfolioButton>
           </>
-        }/>
+        } />
       </CardContent>
     </Card>
   )
