@@ -1,3 +1,12 @@
+# 0.5.0-alpha
+
+- Removed yarn from project
+- Updated dependencies
+- Removed vscode settings
+- Added career section
+  - Added project cards
+  - Added technology cards
+
 # 0.4.0-alpha
 
 - NavBar Logo is now displayed slightly larger
