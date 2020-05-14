@@ -10,21 +10,20 @@ const contactSchema = Yup.object().shape({
   email: Yup.string().email().required(),
   phone: Yup.string(),
   reason: Yup.string().required(),
-  message: Yup.string()
-    .min(50)
-    .max(1000)
-    .required()
+  message: Yup.string().min(50).max(1000).required()
 })
 
 export const ValidatedContactForm = ({ onSubmit }) => {
-  const initialValues = useSelector(state => state.contactForm)
+  const initialValues = useSelector((state) => state.contactForm)
 
   return (
     <Formik
       initialValues={initialValues}
       onSubmit={onSubmit}
       validationSchema={contactSchema}
-    >{ (props) => <ContactForm {...props} onSubmit={onSubmit} /> }</Formik>
+    >
+      {(props) => <ContactForm {...props} onSubmit={onSubmit} />}
+    </Formik>
   )
 }
 

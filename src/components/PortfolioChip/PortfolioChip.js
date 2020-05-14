@@ -2,10 +2,7 @@ import { Chip } from '@material-ui/core'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-export const PortfolioChip = ({
-  technology,
-  ...other
-}) => {
+export const PortfolioChip = ({ technology, ...other }) => {
   const { name, link } = technology
 
   return (
@@ -13,13 +10,9 @@ export const PortfolioChip = ({
       href={link}
       rel="noopener noreferrer"
       target="_blank"
-      style= {{ textDecoration: 'none' }}
+      style={{ textDecoration: 'none' }}
     >
-      <Chip
-        label={name}
-        clickable
-        {...other}
-      />
+      <Chip label={name} clickable {...other} />
     </a>
   )
 }

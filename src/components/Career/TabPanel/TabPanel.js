@@ -1,12 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-export const TabPanel = ({
-  children,
-  value,
-  index,
-  ...other
-}) => {
+export const TabPanel = ({ children, value, index, ...other }) => {
   return (
     <div hidden={value !== index} role="tabpanel" {...other}>
       {children}

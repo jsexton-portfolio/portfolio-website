@@ -1,4 +1,10 @@
-import { Card, CardContent, CardHeader, Container, Typography } from '@material-ui/core'
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  Container,
+  Typography
+} from '@material-ui/core'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { PortfolioChip } from '../../PortfolioChip/PortfolioChip'
@@ -31,19 +37,18 @@ export const ProjectSummaryCard = ({
       <CardHeader title={title} className={classes.header} />
 
       <CardContent>
-        <Typography>
-          { description }
-        </Typography>
+        <Typography>{description}</Typography>
 
         <Container className={classes.technologyChips}>
-          {technologies.map((technology, index) =>
+          {technologies.map((technology, index) => (
             <PortfolioChip
               variant="outlined"
               size="small"
               technology={technology}
               style={{ margin: 2 }}
               key={index}
-            />)}
+            />
+          ))}
         </Container>
       </CardContent>
     </Card>

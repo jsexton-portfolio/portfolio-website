@@ -8,7 +8,7 @@ import { Technologies } from './Technologies/Technologies'
 
 export const Career = () => {
   const dispatch = useDispatch()
-  const value = useSelector(state => state.careerPage.tabIndex)
+  const value = useSelector((state) => state.careerPage.tabIndex)
 
   const handleChange = (event, newValue) => {
     dispatch(careerPageActions.updateTabIndex(newValue))
@@ -40,6 +40,5 @@ export const Career = () => {
         <Projects />
       </TabPanel>
     </div>
-
   )
 }

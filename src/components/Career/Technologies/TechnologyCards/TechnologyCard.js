@@ -26,14 +26,18 @@ export const TechnologyCard = ({
       <Card
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
-        style={{ maxWidth: maxWidth, minWidth: minWidth, marginTop: 25, marginBottom: 25, ...other }}
+        style={{
+          maxWidth: maxWidth,
+          minWidth: minWidth,
+          marginTop: 25,
+          marginBottom: 25,
+          ...other
+        }}
         elevation={elevation}
       >
-        <CardHeader title={name} style={{ textAlign: 'center' }}/>
+        <CardHeader title={name} style={{ textAlign: 'center' }} />
 
-        <CardContent>
-          {children}
-        </CardContent>
+        <CardContent>{children}</CardContent>
       </Card>
     </a>
   )

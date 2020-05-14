@@ -7,12 +7,7 @@ import { PortfolioButton } from '../../PortfolioButton/PortfolioButton'
 import { ContactSelect } from './ContactSelect/ContactSelect'
 import { useStyles } from './style'
 
-const reasons = [
-  'Business',
-  'Question',
-  'Feedback',
-  'Other'
-]
+const reasons = ['Business', 'Question', 'Feedback', 'Other']
 
 // Component simply represents the contact form.
 // Component is not responsible for managing anything else.
@@ -44,19 +39,17 @@ export const ContactForm = ({
 
   return (
     <form noValidate onSubmit={handleFormSubmit}>
-      <Grid container justify='center' direction='column'>
-
+      <Grid container justify="center" direction="column">
         <Grid item className={classes.formItem}>
           <TextField
-            id='name'
-            name='name'
+            id="name"
+            name="name"
             label="Name"
-            variant='outlined'
-            type='text'
+            variant="outlined"
+            type="text"
             autoFocus
             fullWidth
             required
-
             value={values.name}
             helperText={touched.name ? errors.name : ''}
             error={Boolean(touched.name && errors.name)}
@@ -67,14 +60,13 @@ export const ContactForm = ({
 
         <Grid item className={classes.formItem}>
           <TextField
-            id='email'
+            id="email"
             name="email"
-            label='Email'
-            variant='outlined'
-            type='text'
+            label="Email"
+            variant="outlined"
+            type="text"
             fullWidth
             required
-
             value={values.email}
             helperText={touched.email ? errors.email : ''}
             error={Boolean(touched.email && errors.email)}
@@ -85,13 +77,12 @@ export const ContactForm = ({
 
         <Grid item className={classes.formItem}>
           <TextField
-            id='phone'
+            id="phone"
             name="phone"
-            label='Phone'
-            variant='outlined'
-            type='text'
+            label="Phone"
+            variant="outlined"
+            type="text"
             fullWidth
-
             value={values.phone}
             helperText={touched.phone ? errors.phone : ''}
             error={Boolean(touched.phone && errors.phone)}
@@ -102,13 +93,12 @@ export const ContactForm = ({
 
         <Grid item className={classes.formItem}>
           <ContactSelect
-            id='reason'
-            name='reason'
-            label='Reason'
+            id="reason"
+            name="reason"
+            label="Reason"
             selections={reasons}
             fullWidth
             required
-
             value={values.reason}
             helperText={touched.reason ? errors.reason : ''}
             error={Boolean(touched.reason && errors.reason)}
@@ -119,14 +109,13 @@ export const ContactForm = ({
 
         <Grid item className={classes.formItem}>
           <TextField
-            id='message'
+            id="message"
             name="message"
-            label='Message'
-            variant='outlined'
-            type='text'
+            label="Message"
+            variant="outlined"
+            type="text"
             fullWidth
             required
-
             value={values.message}
             helperText={touched.message ? errors.message : ''}
             error={Boolean(touched.message && errors.message)}
@@ -140,7 +129,9 @@ export const ContactForm = ({
           This is a problem because when clicking away from the label on the button text appears lowering where the button is
           rendered on the screen and moving the button away from the cursor. If the cursor is not in the button when it re-renders,
           correct validation functionality will not occur */}
-          <PortfolioButton type='submit' onMouseDown={handleFormSubmit}>Submit</PortfolioButton>
+          <PortfolioButton type="submit" onMouseDown={handleFormSubmit}>
+            Submit
+          </PortfolioButton>
         </Grid>
       </Grid>
     </form>

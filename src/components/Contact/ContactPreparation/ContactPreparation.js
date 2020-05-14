@@ -10,12 +10,15 @@ export const ContactPreparation = ({ ...props }) => {
   return (
     <React.Fragment>
       <Container className={classes.textContainer}>
-        <Typography variant='h3'>Contact</Typography>
+        <Typography variant="h3">Contact</Typography>
 
-        <Typography paragraph>Looking to reach out? Send me a message. I will get back to you as soon as I can.</Typography>
+        <Typography paragraph>
+          Looking to reach out? Send me a message. I will get back to you as
+          soon as I can.
+        </Typography>
       </Container>
 
-      <ValidatedContactForm {...props}/>
+      <ValidatedContactForm {...props} />
     </React.Fragment>
   )
 }

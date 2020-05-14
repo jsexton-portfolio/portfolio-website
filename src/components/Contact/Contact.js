@@ -10,11 +10,20 @@ export const Contact = () => {
 
   const currentActiveComponent = () => {
     switch (activeComponent) {
-      case 'preparing': return (<ContactPreparation onSubmit={handleFormSubmission} />)
-      case 'submitting': return (<SuspendContact />)
-      case 'successful': return (<SuccessfulContact />)
-      case 'failed': return (<FailedContact />)
-      default: return (<Typography>Something bad just happened. I suck at programming.</Typography>)
+      case 'preparing':
+        return <ContactPreparation onSubmit={handleFormSubmission} />
+      case 'submitting':
+        return <SuspendContact />
+      case 'successful':
+        return <SuccessfulContact />
+      case 'failed':
+        return <FailedContact />
+      default:
+        return (
+          <Typography>
+            Something bad just happened. I suck at programming.
+          </Typography>
+        )
     }
   }
 
@@ -26,9 +35,5 @@ export const Contact = () => {
     setTimeout(() => setActiveComponent('successful'), 2000)
   }
 
-  return (
-    <Container>
-      { currentActiveComponent() }
-    </Container>
-  )
+  return <Container>{currentActiveComponent()}</Container>
 }

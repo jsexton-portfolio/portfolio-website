@@ -1,4 +1,10 @@
-import { FormControl, FormHelperText, InputLabel, MenuItem, Select } from '@material-ui/core'
+import {
+  FormControl,
+  FormHelperText,
+  InputLabel,
+  MenuItem,
+  Select
+} from '@material-ui/core'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { useStyles } from './style'
@@ -35,7 +41,12 @@ export const ContactSelect = ({
   }
 
   return (
-    <FormControl {...props} variant="outlined" className={`${classes.root} ${className}`} error={error && !open}>
+    <FormControl
+      {...props}
+      variant="outlined"
+      className={`${classes.root} ${className}`}
+      error={error && !open}
+    >
       <InputLabel ref={inputLabel} id="contact-select-label">
         {label}
       </InputLabel>
@@ -51,11 +62,13 @@ export const ContactSelect = ({
         labelWidth={labelWidth}
       >
         {selections.map((reason, i) => (
-          <MenuItem key={i} value={reason}>{reason}</MenuItem>
+          <MenuItem key={i} value={reason}>
+            {reason}
+          </MenuItem>
         ))}
       </Select>
 
-      <FormHelperText>{ helperText }</FormHelperText>
+      <FormHelperText>{helperText}</FormHelperText>
     </FormControl>
   )
 }

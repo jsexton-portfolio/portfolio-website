@@ -9,29 +9,23 @@ import { useStyles } from './style'
 const projects = [
   {
     title: 'Project One',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    technologies: [
-      technologies.JAVASCRIPT,
-      technologies.MONGO
-    ],
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    technologies: [technologies.JAVASCRIPT, technologies.MONGO],
     projectLink: ''
   },
   {
     title: 'Project Two',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    technologies: [
-      technologies.KOTLIN,
-      technologies.MICRONAUT
-    ],
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    technologies: [technologies.KOTLIN, technologies.MICRONAUT],
     projectLink: ''
   },
   {
     title: 'Project Three',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    technologies: [
-      technologies.JAVA,
-      technologies.TYPESCRIPT
-    ],
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    technologies: [technologies.JAVA, technologies.TYPESCRIPT],
     projectLink: ''
   }
 ]
@@ -42,33 +36,44 @@ export const Home = (props) => {
   return (
     <div>
       <div className={classes.imageContainer}>
-        <img className={classes.heroImage} src='/hero-sand.jpg' alt='Hero'></img>
+        <img
+          className={classes.heroImage}
+          src="/hero-sand.jpg"
+          alt="Hero"
+        ></img>
 
-        <Typography className={classes.heroText} variant='h2'>Justin Sexton</Typography>
+        <Typography className={classes.heroText} variant="h2">
+          Justin Sexton
+        </Typography>
       </div>
 
       <Container className={classes.sectionContainer}>
-        <Typography variant='h3'>About Me</Typography>
+        <Typography variant="h3">About Me</Typography>
         <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
         </Typography>
-        <Link to='/about' className={classes.link}>
+        <Link to="/about" className={classes.link}>
           <PortfolioButton>Read More</PortfolioButton>
         </Link>
       </Container>
 
       <Container className={classes.sectionContainer}>
-        <CareerSection projects={projects}/>
+        <CareerSection projects={projects} />
       </Container>
 
       <Container className={classes.sectionContainer}>
-        <Typography variant='h3'>
-          Contact
-        </Typography>
+        <Typography variant="h3">Contact</Typography>
         <Typography paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </Typography>
-        <Link to='/contact' className={classes.link}>
+        <Link to="/contact" className={classes.link}>
           <PortfolioButton>Contact Me</PortfolioButton>
         </Link>
       </Container>

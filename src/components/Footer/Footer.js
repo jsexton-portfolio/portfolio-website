@@ -11,21 +11,27 @@ export const Footer = () => {
     <div className={classes.root}>
       <Divider />
       <Container className={classes.socialMediaIcons}>
-        <a href='https://github.com/JSextonn' className={classes.link} rel="noopener noreferrer" target="_blank">
+        <a
+          href="https://github.com/JSextonn"
+          className={classes.link}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           <GitHubIcon className={classes.githubIcon} />
         </a>
 
-        <a href='https://www.linkedin.com/in/jsextonn/' className={classes.link} rel="noopener noreferrer" target="_blank">
+        <a
+          href="https://www.linkedin.com/in/jsextonn/"
+          className={classes.link}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           <LinkedInIcon className={classes.linkedInIcon} />
         </a>
       </Container>
 
-      <Typography>
-        Last Updated: 2020/03/08
-      </Typography>
-      <Typography>
-        &copy; 2020 Justin Sexton
-      </Typography>
+      <Typography>Last Updated: 2020/03/08</Typography>
+      <Typography>&copy; 2020 Justin Sexton</Typography>
     </div>
   )
 }

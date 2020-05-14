@@ -6,10 +6,8 @@ export const PostgresCard = ({ ...other }) => {
   const { name, link } = technologies.POSTGRESQL
 
   return (
-    <TechnologyCard name={name} url={link} { ...other }>
-      <svg
-        viewBox="0 0 445.383 445.383"
-      >
+    <TechnologyCard name={name} url={link} {...other}>
+      <svg viewBox="0 0 445.383 445.383">
         <g
           fill="none"
           fillRule="nonzero"

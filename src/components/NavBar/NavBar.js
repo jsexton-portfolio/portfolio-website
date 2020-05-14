@@ -20,22 +20,22 @@ import { useStyles } from './style'
 const navigationItems = [
   {
     path: '/',
-    icon: (<HomeIcon />),
+    icon: <HomeIcon />,
     text: 'Home'
   },
   {
     path: '/about',
-    icon: (<HelpIcon />),
+    icon: <HelpIcon />,
     text: 'About'
   },
   {
     path: '/career',
-    icon: (<WorkIcon />),
+    icon: <WorkIcon />,
     text: 'Career'
   },
   {
     path: '/contact',
-    icon: (<MailIcon />),
+    icon: <MailIcon />,
     text: 'Contact'
   }
 ]
@@ -47,8 +47,11 @@ export const NavBar = () => {
     drawerOpen: false
   })
 
-  const toggleDrawer = (open) => event => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+  const toggleDrawer = (open) => (event) => {
+    if (
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
       return
     }
 
@@ -57,25 +60,38 @@ export const NavBar = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position='static' className={classes.bar}>
+      <AppBar position="static" className={classes.bar}>
         <Toolbar>
           <Typography variant="h5" className={classes.title}>
-            <Link to='/' className={classes.linkTitle}>Justin Sexton</Link>
+            <Link to="/" className={classes.linkTitle}>
+              Justin Sexton
+            </Link>
           </Typography>
 
           <div className={classes.navigationItems}>
-            {navigationItems.map((item, i) =>
-              <Button color="inherit" to={item.path} component={Link} key={i}>{item.text}</Button>
-            )}
+            {navigationItems.map((item, i) => (
+              <Button color="inherit" to={item.path} component={Link} key={i}>
+                {item.text}
+              </Button>
+            ))}
           </div>
 
-          <IconButton edge='start' color='inherit' className={classes.navigationMenu} onClick={toggleDrawer(true)}>
+          <IconButton
+            edge="start"
+            color="inherit"
+            className={classes.navigationMenu}
+            onClick={toggleDrawer(true)}
+          >
             <MenuIcon className={classes.menuIcon} />
           </IconButton>
         </Toolbar>
       </AppBar>
 
-      <Drawer anchor="top" open={state.drawerOpen} onClose={toggleDrawer(false)}>
+      <Drawer
+        anchor="top"
+        open={state.drawerOpen}
+        onClose={toggleDrawer(false)}
+      >
         <div
           className={classes.drawer}
           role="presentation"
@@ -83,15 +99,14 @@ export const NavBar = () => {
           onKeyDown={toggleDrawer(false)}
         >
           <List>
-            {navigationItems.map((item, i) =>
+            {navigationItems.map((item, i) => (
               <Link to={item.path} className={classes.linkItem} key={i}>
                 <ListItem button>
-                  <ListItemIcon>
-                    {item.icon}
-                  </ListItemIcon>
+                  <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText primary={item.text} />
                 </ListItem>
-              </Link>)}
+              </Link>
+            ))}
           </List>
         </div>
       </Drawer>

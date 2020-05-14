@@ -7,7 +7,7 @@ const Portrait = ({ src, alt }) => {
 
   return (
     <div className={classes.landscape}>
-      <img src={src} alt={alt} className={classes.image}/>
+      <img src={src} alt={alt} className={classes.image} />
     </div>
   )
 }

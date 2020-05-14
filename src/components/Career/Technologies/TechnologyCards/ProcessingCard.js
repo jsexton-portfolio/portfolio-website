@@ -7,8 +7,18 @@ export const ProcessingCard = ({ ...other }) => {
 
   return (
     <TechnologyCard name={name} url={link} {...other}>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" enableBackground="new 0 0 512 512" xmlSpace="preserve">
-        <image id="image0" width="512" height="512" x="0" y="0"
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+        enableBackground="new 0 0 512 512"
+        xmlSpace="preserve"
+      >
+        <image
+          id="image0"
+          width="512"
+          height="512"
+          x="0"
+          y="0"
           xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAIAAAB7GkOtAAAAIGNIUk0AAHomAACAhAAA+gAAAIDo
 AAB1MAAA6mAAADqYAAAXcJy6UTwAAAAGYktHRAD/AP8A/6C9p5MAAABGdEVYdFJhdyBwcm9maWxl
 IHR5cGUgYXBwMTIACmFwcDEyCiAgICAgIDE1CjQ0NzU2MzZiNzkwMDAxMDAwNDAwMDAwMDY0MDAw
@@ -2812,7 +2822,8 @@ T6dZtZu11wbtLLhf47Cvd07f8VM0bTrWm7vMjeVduOPW7P5fgnXRRRdddHFL6E6Wu+iiiy7epug6
 gC666KKLtym6DqCLLrro4m2KrgPooosuunibousAuuiiiy7epug6gC666KKLtym6DqCLLrro4m2K
 /z/CaXDVwV6wPwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMC0wMy0yOFQxMDo0NTo0NyswMzowMJBC
 KfkAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjAtMDMtMjhUMTA6NDU6NDcrMDM6MDDhH5FFAAAAAElF
-TkSuQmCC" />
+TkSuQmCC"
+        />
       </svg>
     </TechnologyCard>
   )
