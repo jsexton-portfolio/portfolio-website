@@ -2,6 +2,7 @@ import { Container } from '@material-ui/core'
 import React from 'react'
 import { CassandraCard } from './TechnologyCards/CassandraCard'
 import { CSharpCard } from './TechnologyCards/CSharpCard'
+import { DjangoCard } from './TechnologyCards/DjangoCard'
 import { DynamoCard } from './TechnologyCards/DynamoCard'
 import { GatewayCard } from './TechnologyCards/GatewayCard'
 import { GitCard } from './TechnologyCards/GitCard'
@@ -50,6 +51,9 @@ const technologySections = {
   frameworksAndLibraries: {
     name: 'Frameworks/ Libraries',
     cards: [
+      {
+        source: <DjangoCard />
+      },
       {
         source: <KtorCard />
       },
@@ -118,7 +122,12 @@ export const Technologies = () => {
   return (
     <Container style={{ textAlign: 'center', marginTop: 50 }}>
       {Object.values(technologySections).map((section, index) => (
-        <TechnologyCardSection key={index} header={section.name} cards={section.cards} style={{ margin: 50 }}/>
+        <TechnologyCardSection
+          key={index}
+          header={section.name}
+          cards={section.cards}
+          style={{ margin: 50 }}
+        />
       ))}
     </Container>
   )

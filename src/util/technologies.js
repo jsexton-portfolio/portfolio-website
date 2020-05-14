@@ -15,6 +15,10 @@ export const technologies = {
     name: 'C#',
     link: 'https://docs.microsoft.com/en-us/dotnet/'
   },
+  DJANGO: {
+    name: 'Django',
+    link: 'https://www.djangoproject.com/'
+  },
   DYNAMODB: {
     name: 'Dynamo',
     link: 'https://aws.amazon.com/dynamodb/'
