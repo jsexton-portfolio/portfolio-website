@@ -1,3 +1,8 @@
+# 0.6.0-alpha
+
+- Added Chalice technology card
+- Added Django technology card
+
 # 0.5.0-alpha
 
 - Removed yarn from project
@@ -28,29 +33,30 @@
 # 0.2.2-alpha
 
 - Contact form state is now persisted and will maintain when navigating away from contact form
-  
+
 # 0.2.1-alpha
 
 - Fixed contact form select input label. Changed from 'Purpose' to 'Reason'
-  
+
 # 0.2.0-alpha
 
 - Added contact page to website
+
   - Form validation
     - Name is required
     - Email is required and must be correctly formatted
     - Contact reason is required
     - Contact message is required and must be between 50 and 1000 characters
   - No API currently exists so page is not integrated with contact service.
-  
+
 # 0.1.2-alpha
 
 - Added Justin Logo to website
-  
+
 # 0.1.1-alpha
 
 - Fixed bug not allowing project cards on home page to be fully responsive.
-  
+
 # 0.1.0-alpha
 
 - Added initial project infrastructure

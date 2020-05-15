@@ -1,8 +1,4 @@
 export const technologies = {
-  ASP_NET_CORE: {
-    name: 'ASP.NET',
-    link: ''
-  },
   AWS_API_GATEWAY: {
     name: 'Gateway',
     link: 'https://aws.amazon.com/api-gateway/'
