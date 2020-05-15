@@ -1,6 +1,7 @@
 import { Container } from '@material-ui/core'
 import React from 'react'
 import { CassandraCard } from './TechnologyCards/CassandraCard'
+import { ChaliceCard } from './TechnologyCards/ChaliceCard'
 import { CSharpCard } from './TechnologyCards/CSharpCard'
 import { DjangoCard } from './TechnologyCards/DjangoCard'
 import { DynamoCard } from './TechnologyCards/DynamoCard'
@@ -51,6 +52,9 @@ const technologySections = {
   frameworksAndLibraries: {
     name: 'Frameworks/ Libraries',
     cards: [
+      {
+        source: <ChaliceCard />
+      },
       {
         source: <DjangoCard />
       },

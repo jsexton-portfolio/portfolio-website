@@ -1,4 +1,8 @@
 export const technologies = {
+  ASP_NET_CORE: {
+    name: 'ASP.NET',
+    link: ''
+  },
   AWS_API_GATEWAY: {
     name: 'Gateway',
     link: 'https://aws.amazon.com/api-gateway/'
@@ -10,6 +14,10 @@ export const technologies = {
   CASSANDRA: {
     name: 'Cassandra',
     link: 'http://cassandra.apache.org/'
+  },
+  CHALICE: {
+    name: 'Chalice',
+    link: 'https://chalice.readthedocs.io/en/latest/'
   },
   CSHARP: {
     name: 'C#',
