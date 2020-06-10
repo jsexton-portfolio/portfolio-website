@@ -14,7 +14,9 @@ const CONTACT_CREATION_STATE = {
 }
 
 export const Contact = () => {
-  const [activeComponent, setActiveComponent] = useState('preparing')
+  const [activeComponent, setActiveComponent] = useState(
+    CONTACT_CREATION_STATE.PREPARING
+  )
 
   const currentActiveComponent = () => {
     switch (activeComponent) {
