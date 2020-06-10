@@ -1,3 +1,4 @@
+import { contact } from '@jsextonn/portfolio-api-client'
 import { Container, Typography } from '@material-ui/core'
 import React, { useState } from 'react'
 import { ContactPreparation } from './ContactPreparation/ContactPreparation'
@@ -5,18 +6,25 @@ import { FailedContact } from './FailedContact/FailedContact'
 import { SuccessfulContact } from './SuccessfulContact/SuccessfulContact'
 import { SuspendContact } from './SuspendContact/SuspendContact'
 
+const CONTACT_CREATION_STATE = {
+  PREPARING: 'preparing',
+  SUBMITTING: 'submitting',
+  SUCCESSFUL: 'successful',
+  FAILED: 'failed'
+}
+
 export const Contact = () => {
   const [activeComponent, setActiveComponent] = useState('preparing')
 
   const currentActiveComponent = () => {
     switch (activeComponent) {
-      case 'preparing':
+      case CONTACT_CREATION_STATE.PREPARING:
         return <ContactPreparation onSubmit={handleFormSubmission} />
-      case 'submitting':
+      case CONTACT_CREATION_STATE.SUBMITTING:
         return <SuspendContact />
-      case 'successful':
+      case CONTACT_CREATION_STATE.SUCCESSFUL:
         return <SuccessfulContact />
-      case 'failed':
+      case CONTACT_CREATION_STATE.FAILED:
         return <FailedContact />
       default:
         return (
@@ -28,11 +36,27 @@ export const Contact = () => {
   }
 
   const handleFormSubmission = (values, actions) => {
-    // TODO: Integrate with service
+    setActiveComponent(CONTACT_CREATION_STATE.SUBMITTING)
 
-    setActiveComponent('submitting')
+    // Contact message API POST body
+    // https://github.com/jsexton-portfolio/contact-message-service
+    const request = {
+      body: {
+        message: values.message,
+        reason: values.reason,
+        sender: {
+          alias: values.name,
+          phone: values.phone,
+          email: values.email
+        }
+      }
+    }
 
-    setTimeout(() => setActiveComponent('successful'), 2000)
+    const messageClient = contact().messages
+    messageClient
+      .create(request)
+      .then((message) => setActiveComponent(CONTACT_CREATION_STATE.SUCCESSFUL))
+      .catch(() => setActiveComponent(CONTACT_CREATION_STATE.FAILED))
   }
 
   return <Container>{currentActiveComponent()}</Container>

@@ -7,7 +7,7 @@ import { PortfolioButton } from '../../PortfolioButton/PortfolioButton'
 import { ContactSelect } from './ContactSelect/ContactSelect'
 import { useStyles } from './style'
 
-const reasons = ['Business', 'Question', 'Feedback', 'Other']
+const reasons = ['business', 'question', 'feedback', 'other']
 
 // Component simply represents the contact form.
 // Component is not responsible for managing anything else.
@@ -32,7 +32,9 @@ export const ContactForm = ({
     handleChange(event)
   }
 
-  const handleFormSubmit = () => {
+  const handleFormSubmit = (event) => {
+    event.preventDefault()
+
     handleSubmit()
     dispatch(formActions.clear())
   }

@@ -1,3 +1,10 @@
+# 0.6.1-alpha
+
+- Fixed bug making contact creation form refresh page on submit
+- Integrated contact form with Portfolio Contact Message API and NodeJS Client
+  - https://github.com/jsexton-portfolio/contact-message-service
+  - https://github.com/jsexton-portfolio/portfolio-api-nodejs-client
+
 # 0.6.0-alpha
 
 - Added Chalice technology card
