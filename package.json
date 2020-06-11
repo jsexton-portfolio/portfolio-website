@@ -1,22 +1,22 @@
 {
   "name": "portfolio-website",
-  "version": "0.5.0-alpha",
+  "version": "0.6.3-alpha",
   "private": true,
   "dependencies": {
     "@jsextonn/portfolio-api-client": "^0.1.2",
-    "@material-ui/core": "^4.9.12",
+    "@material-ui/core": "^4.10.1",
     "@material-ui/icons": "^4.9.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.1.2",
+    "@testing-library/jest-dom": "^5.10.0",
+    "@testing-library/react": "^10.2.1",
+    "@testing-library/user-event": "^11.4.2",
     "formik": "^2.1.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
     "redux": "^4.0.5",
-    "yup": "^0.28.5"
+    "yup": "^0.29.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -42,10 +42,10 @@
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-standard": "^4.0.1"
   }
 }
