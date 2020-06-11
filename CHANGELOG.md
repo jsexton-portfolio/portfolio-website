@@ -1,3 +1,7 @@
+# 0.6.2-alpha
+
+- Fixed bug that didnt allow scroll position to be at top of screen after navigating to a different location.
+
 # 0.6.1-alpha
 
 - Fixed bug making contact creation form refresh page on submit
