@@ -1,6 +1,7 @@
 # 0.6.2-alpha
 
 - Fixed bug that didnt allow scroll position to be at top of screen after navigating to a different location.
+- Fixed bug that did not allow phone number to be correctly validated
 
 # 0.6.1-alpha
 

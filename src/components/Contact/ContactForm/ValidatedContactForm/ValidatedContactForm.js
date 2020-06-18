@@ -5,10 +5,21 @@ import { useSelector } from 'react-redux'
 import * as Yup from 'yup'
 import { ContactForm } from '../ContactForm'
 
+Yup.addMethod(Yup.string, 'phone', function () {
+  return this.test({
+    name: 'phone',
+    message: 'phone must be a valid phone number',
+    test: (phone = '') => {
+      const phoneNumberRegex = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/
+      return phone === '' || phoneNumberRegex.test(phone)
+    }
+  })
+})
+
 const contactSchema = Yup.object().shape({
   name: Yup.string().required(),
   email: Yup.string().email().required(),
-  phone: Yup.string(),
+  phone: Yup.string().phone(),
   reason: Yup.string().required(),
   message: Yup.string().min(100).max(2000).required()
 })
