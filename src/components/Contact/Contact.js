@@ -48,7 +48,8 @@ export const Contact = () => {
         reason: values.reason,
         sender: {
           alias: values.name,
-          phone: values.phone,
+          // API does not accept empty strings for phone numbers. They are seen as invalid and will yield 400.
+          phone: values.phone !== '' ? values.phone : null,
           email: values.email
         }
       }

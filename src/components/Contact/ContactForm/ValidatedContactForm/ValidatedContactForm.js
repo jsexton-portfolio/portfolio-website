@@ -11,7 +11,7 @@ Yup.addMethod(Yup.string, 'phone', function () {
     message: 'phone must be a valid phone number',
     test: (phone = '') => {
       const phoneNumberRegex = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/
-      return phone === '' || phoneNumberRegex.test(phone)
+      return phone === undefined || phoneNumberRegex.test(phone)
     }
   })
 })

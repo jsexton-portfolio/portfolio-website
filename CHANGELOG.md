@@ -1,6 +1,7 @@
 # 0.6.3-alpha
 
 - Removed message length requirement
+- Fixed bug that incorrectly sent empty phone number to API resulting in 400
 
 # 0.6.2-alpha
 
