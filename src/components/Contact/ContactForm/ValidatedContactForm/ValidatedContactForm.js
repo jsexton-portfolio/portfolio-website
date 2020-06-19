@@ -21,7 +21,7 @@ const contactSchema = Yup.object().shape({
   email: Yup.string().email().required(),
   phone: Yup.string().phone(),
   reason: Yup.string().required(),
-  message: Yup.string().min(100).max(2000).required()
+  message: Yup.string().max(2000).required()
 })
 
 export const ValidatedContactForm = ({ onSubmit }) => {

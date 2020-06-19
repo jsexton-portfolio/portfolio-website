@@ -1,3 +1,7 @@
+# 0.6.3-alpha
+
+- Removed message length requirement
+
 # 0.6.2-alpha
 
 - Fixed bug that didnt allow scroll position to be at top of screen after navigating to a different location.
