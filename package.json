@@ -1,6 +1,6 @@
 {
   "name": "portfolio-website",
-  "version": "0.6.2-alpha",
+  "version": "0.6.3-alpha",
   "private": true,
   "dependencies": {
     "@jsextonn/portfolio-api-client": "^0.1.2",
