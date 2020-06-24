@@ -21,6 +21,7 @@ import { ProcessingCard } from './TechnologyCards/ProcessingCard'
 import { PythonCard } from './TechnologyCards/PythonCard'
 import { ReactCard } from './TechnologyCards/ReactCard'
 import { ReduxCard } from './TechnologyCards/ReduxCard'
+import { ServerlessFrameworkCard } from './TechnologyCards/ServerlessFrameworkCard'
 import { SpringCard } from './TechnologyCards/SpringCard'
 import { TypeScriptCard } from './TechnologyCards/TypeScriptCard'
 import { TechnologyCardSection } from './TechnologyCardSection/TechnologyCardSection'
@@ -100,6 +101,9 @@ const technologySections = {
       },
       {
         source: <GatewayCard />
+      },
+      {
+        source: <ServerlessFrameworkCard />
       }
     ]
   },

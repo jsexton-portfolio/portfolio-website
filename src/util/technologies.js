@@ -83,6 +83,10 @@ export const technologies = {
     name: 'Redux',
     link: 'https://redux.js.org/'
   },
+  SERVERLESS_FRAMEWORK: {
+    name: 'Serverless',
+    link: 'https://www.serverless.com/'
+  },
   SPRING: {
     name: 'Spring',
     link: 'https://spring.io/'
