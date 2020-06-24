@@ -12,11 +12,21 @@ import { ConditionalRender } from '../../../ConditionalRender/ConditionalRender'
 import { PortfolioButton } from '../../../PortfolioButton/PortfolioButton'
 import { PortfolioChip } from '../../../PortfolioChip/PortfolioChip'
 
-export const ProjectCard = ({ project, style, ...other }) => {
-  const { title, description, technologies, link, startDate, endDate } = project
+export const projectTypes = {
+  LIBRARY: { value: 'Library' },
+  CLI: { value: 'Command Line Application' },
+  WEB_APPLICATION: { value: 'Web Application' },
+  WEB_API: { value: 'Web API' },
+  ART: { value: 'Art' },
+  CHALLENGES: { value: 'Challenges' },
+  SPA: { value: 'Single Page Application' }
+}
 
-  const linkExists = link != null
-  const subHeader = `(${startDate}${endDate != null ? ' - ' + endDate : ''})`
+export const ProjectCard = ({ project, style, ...other }) => {
+  const { title, type, description, technologies, sourceLink } = project
+
+  const sourceLinkExists = sourceLink != null
+  const subHeader = type ? type.value : ''
 
   return (
     <Card style={{ marginBottom: 5, ...style }} {...other}>
@@ -49,16 +59,16 @@ export const ProjectCard = ({ project, style, ...other }) => {
         </Grid>
 
         <ConditionalRender
-          condition={linkExists}
+          condition={sourceLinkExists}
           render={() => (
             <>
               <Divider style={{ marginTop: 15, height: 2 }} />
               <PortfolioButton
                 target="_blank"
-                href={link.value}
+                href={sourceLink}
                 style={{ marginTop: 15 }}
               >
-                {link.name}
+                View Source
               </PortfolioButton>
             </>
           )}
