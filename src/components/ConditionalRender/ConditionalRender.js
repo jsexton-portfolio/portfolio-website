@@ -3,7 +3,7 @@ import React from 'react'
 
 // Simple component used to lazily load render prop if condition is met.
 export const ConditionalRender = ({ condition, render }) => {
-  return <React.Fragment>{condition && render()}</React.Fragment>
+  return <>{condition && render()}</>
 }
 
 ConditionalRender.propTypes = {

@@ -8,7 +8,7 @@ export const ContactPreparation = ({ ...props }) => {
   const classes = useStyles()
 
   return (
-    <React.Fragment>
+    <>
       <Container className={classes.textContainer}>
         <Typography variant="h3">Contact</Typography>
 
@@ -19,7 +19,7 @@ export const ContactPreparation = ({ ...props }) => {
       </Container>
 
       <ValidatedContactForm {...props} />
-    </React.Fragment>
+    </>
   )
 }
 
