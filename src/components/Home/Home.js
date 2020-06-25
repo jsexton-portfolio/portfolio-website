@@ -1,9 +1,9 @@
-import { Container, Typography } from '@material-ui/core'
+import { Container, Grid, Typography } from '@material-ui/core'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { technologies } from '../../util/technologies'
 import { PortfolioButton } from '../PortfolioButton/PortfolioButton'
-import { CareerSection } from './CareerSection/CareerSection'
+import { ProjectSummaryCard } from './ProjectSummaryCard/ProjectSummaryCard'
 import { useStyles } from './style'
 
 const projects = [
@@ -64,7 +64,26 @@ export const Home = (props) => {
       </Container>
 
       <Container className={classes.sectionContainer}>
-        <CareerSection projects={projects} />
+        <Typography variant="h3">Career</Typography>
+        <Typography paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
+          ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.
+        </Typography>
+        <Grid container spacing={5} justify="center" style={{ marginTop: 75 }}>
+          {projects.map((card) => (
+            <Grid key={card.title} item>
+              <ProjectSummaryCard
+                title={card.title}
+                description={card.description}
+                technologies={card.technologies}
+                projectLink={card.projectLink}
+                elevation={5}
+              />
+            </Grid>
+          ))}
+        </Grid>
       </Container>
 
       <Container className={classes.sectionContainer}>
