@@ -31,7 +31,9 @@ export const Footer = () => {
       </Container>
 
       <Typography>Last Updated: 2020/03/08</Typography>
-      <Typography>&copy; 2020 Justin Sexton</Typography>
+      <Typography>
+        justinsexton.dev@gmail.com - &copy; 2020 Justin Sexton
+      </Typography>
     </div>
   )
 }
