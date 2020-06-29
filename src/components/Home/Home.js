@@ -8,24 +8,40 @@ import { useStyles } from './style'
 
 const projects = [
   {
-    title: 'Project One',
+    title: 'Countersign',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    technologies: [technologies.JAVASCRIPT, technologies.MONGO],
+      'Countersign is a lightweight library for generating passwords that are completely random or follow some sort of pattern so that they are easier for humans to remember. The library is ideal to use anytime a computer generated password is needed for an application. A few of my personal projects are using Countersign and can be installed using pip.',
+    technologies: [technologies.PYTHON],
     projectLink: ''
   },
   {
-    title: 'Project Two',
+    title: 'Personal Portfolio',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    technologies: [technologies.KOTLIN, technologies.MICRONAUT],
+      'Full stack web application acting as my personal portfolio. You are currently consuming this project. The application was designed and built from scratch to demonstrate my full stack web development capabiltiies, share professional details about myself, help get in contact with fellow developers and professional personal.',
+    technologies: [
+      technologies.JAVASCRIPT,
+      technologies.TYPESCRIPT,
+      technologies.REACT,
+      technologies.REDUX,
+      technologies.PYTHON,
+      technologies.CHALICE,
+      technologies.AWS_LAMBDA,
+      technologies.AWS_API_GATEWAY,
+      technologies.MONGO
+    ],
     projectLink: ''
   },
   {
-    title: 'Project Three',
+    title: 'Programming Challenges',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    technologies: [technologies.JAVA, technologies.TYPESCRIPT],
+      'Large collection of programming challenges in many different languages accumulated over many years or programming. Completing challenges is not only fun but helped me improve knowledge of a chosen language. Challenges were collected and solved from many different sites and forums. These sources are listed in the repository.',
+    technologies: [
+      technologies.JAVA,
+      technologies.PYTHON,
+      technologies.JAVASCRIPT,
+      technologies.KOTLIN,
+      technologies.CSHARP
+    ],
     projectLink: ''
   }
 ]
@@ -47,7 +63,7 @@ export const Home = (props) => {
         </Typography>
       </div>
 
-      <Container className={classes.sectionContainer}>
+      <Container className={classes.container}>
         <Typography variant="h3">About Me</Typography>
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -63,15 +79,28 @@ export const Home = (props) => {
         </Link>
       </Container>
 
-      <Container className={classes.sectionContainer}>
+      <Container className={classes.container}>
         <Typography variant="h3">Career</Typography>
         <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-          ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
+          I am currently employed at AIG as a software developer. Even with a
+          full time position I still find time to work on small side projects
+          and even in some cases large ones. Over the years I have started
+          mulitple projects working with many different languages and
+          technologies . Descriptions of all the projects can be found on the
+          site along with links to their source code. Take a look!
         </Typography>
-        <Grid container spacing={5} justify="center" style={{ marginTop: 75 }}>
+
+        {/*
+        Something wrong is going on here. On smaller mobile devices something seems to be overflowing out of its container.
+        Trello Ticket: https://trello.com/c/MTlgomeU
+        Material UI: https://material-ui.com/components/grid/#limitations
+        */}
+        <Grid
+          container
+          spacing={5}
+          justify="center"
+          className={classes.projectGrid}
+        >
           {projects.map((card) => (
             <Grid key={card.title} item>
               <ProjectSummaryCard
@@ -86,11 +115,12 @@ export const Home = (props) => {
         </Grid>
       </Container>
 
-      <Container className={classes.sectionContainer}>
+      <Container className={classes.container}>
         <Typography variant="h3">Contact</Typography>
         <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Looking to connect? Feel free to reach out through my various social
+          media platforms or contact me directly through the website contact
+          message functionality. I will get back to you as soon as possible.
         </Typography>
         <Link to="/contact" className={classes.link}>
           <PortfolioButton>Contact Me</PortfolioButton>

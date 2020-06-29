@@ -18,11 +18,14 @@ export const useStyles = makeStyles((theme) => ({
     left: '50%',
     transform: 'translate(-50%, -50%)'
   },
-  sectionContainer: {
+  container: {
     textAlign: 'center',
-    padding: 50
+    marginTop: 50
   },
   link: {
     textDecoration: 'none'
+  },
+  projectGrid: {
+    marginTop: 50
   }
 }))

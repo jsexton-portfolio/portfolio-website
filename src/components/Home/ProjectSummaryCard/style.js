@@ -11,9 +11,9 @@ export const useStyles = makeStyles((theme) => ({
     color: 'white'
   },
   technologyChips: {
-    paddingTop: 10
+    marginTop: 10
   },
   technologyChip: {
-    margin: 5
+    margin: 2
   }
 }))

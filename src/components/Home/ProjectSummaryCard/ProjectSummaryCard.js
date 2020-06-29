@@ -45,7 +45,7 @@ export const ProjectSummaryCard = ({
               variant="outlined"
               size="small"
               technology={technology}
-              style={{ margin: 2 }}
+              className={classes.technologyChip}
               key={index}
             />
           ))}
