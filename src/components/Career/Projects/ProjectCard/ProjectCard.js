@@ -41,11 +41,9 @@ export const ProjectCard = ({ project, style, ...other }) => {
         {description}
 
         <Divider style={{ marginTop: 15, height: 2 }} />
-
         <Typography variant="h5" style={{ marginTop: 10 }}>
           Technologies
         </Typography>
-
         <Grid container style={{ marginTop: 15 }} spacing={1}>
           {technologies.map((technology, index) => (
             <Grid item key={index}>

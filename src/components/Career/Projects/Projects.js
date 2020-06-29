@@ -73,7 +73,9 @@ const projects = [
           Countersign is a lightweight library for generating passwords that are
           completely random or follow some sort of pattern so that they are
           easier for humans to remember. The library is ideal to use anytime a
-          computer generated password is needed for an application.
+          computer generated password is needed for an application. A few of my
+          personal projects are using Countersign and can be installed using
+          pip.
         </Typography>
       </>
     ),
@@ -121,9 +123,10 @@ const projects = [
         <Typography>
           Inspired by the Coding Train YouTube channel, Matrix Rain is an artsy
           project that is capable of drawing streams of changing random katakana
-          characters to the screen. This produces the same effect that can be
-          seen in the movie The Matrix but with a twist. The characters are
-          randomly colored.
+          characters to the screen. This produces the same affect that can be
+          seen in the movie <q>The Matrix</q> but the application applies a
+          slight twist. The characters are randomly colored, displaying a
+          rainbow matrix rain.
         </Typography>
       </>
     ),
@@ -138,8 +141,10 @@ const projects = [
         <Typography variant="h5">Description</Typography>
         <Typography>
           Large collection of programming challenges in many different languages
-          accumulated over my many years or programming. Challenges were
-          collected from many different sites and forums.
+          accumulated over many years or programming. Completing challenges is
+          not only fun but helped me improve knowledge of a chosen language.
+          Challenges were collected and solved from many different sites and
+          forums. These sources are listed in the repository.
         </Typography>
       </>
     ),
