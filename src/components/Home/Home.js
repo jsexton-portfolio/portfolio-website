@@ -97,12 +97,12 @@ export const Home = (props) => {
         */}
         <Grid
           container
-          spacing={5}
+          spacing={0}
           justify="center"
           className={classes.projectGrid}
         >
           {projects.map((card) => (
-            <Grid key={card.title} item>
+            <>
               <ProjectSummaryCard
                 title={card.title}
                 description={card.description}
@@ -110,7 +110,7 @@ export const Home = (props) => {
                 projectLink={card.projectLink}
                 elevation={5}
               />
-            </Grid>
+            </>
           ))}
         </Grid>
       </Container>
