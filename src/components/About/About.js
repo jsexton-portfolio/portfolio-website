@@ -1,6 +1,6 @@
 import { Container, Typography } from '@material-ui/core'
 import React from 'react'
-import Portrait from './Portrait/Portrait'
+import { Portrait } from './Portrait/Portrait'
 import { useStyles } from './style'
 
 export const About = () => {
@@ -8,49 +8,39 @@ export const About = () => {
 
   return (
     <Container className={classes.root}>
-      <Container>
+      <Container className={classes.container}>
         <Portrait src="/justin.jpg" alt="Justin" />
-        <Typography variant="h4">
-          Hi, I am Justin, nice to meet you! Feel free to take a look around.
+      </Container>
+
+      <Container className={classes.container}>
+        <Typography variant="h5">
+          Hi, my name is Justin Sexton, I am a software developer in the
+          Houston, Tx area.
         </Typography>
       </Container>
 
-      <Container className={classes.sectionContainer}>
-        <Typography variant="h2">Early Life</Typography>
+      <Container className={classes.container}>
+        <Typography variant="h4">Passion for Programming</Typography>
         <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          I started programming College introduced me to all the imporant ideas
+          I started programming College introduced me to all the imporant ideas
+          I started programming College introduced me to all the imporant ideas
         </Typography>
-      </Container>
-
-      <Container className={classes.sectionContainer}>
-        <Typography variant="h2">???</Typography>
         <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          I then started teaching myself until I reached college I then started
+          teaching myself until I reached college I then started teaching myself
+          until I reached college I then started teaching myself until I reached
+          college I then started teaching myself until I reached college
         </Typography>
-      </Container>
-
-      <Container className={classes.sectionContainer}>
-        <Typography variant="h2">Future Endeavors</Typography>
         <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          College introduced me to all the imporant ideas
+        </Typography>
+        <Typography paragraph>
+          I now work professionally as a programmer
+        </Typography>
+        <Typography paragraph>
+          In my spare time I still keep up with all the new stuff and try to
+          continue bettering myself
         </Typography>
       </Container>
     </Container>

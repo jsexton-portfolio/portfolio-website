@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { useStyles } from './style'
 
-const Portrait = ({ src, alt }) => {
+export const Portrait = ({ src, alt }) => {
   const classes = useStyles()
 
   return (
@@ -16,5 +16,3 @@ Portrait.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired
 }
-
-export default Portrait
