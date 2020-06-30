@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
@@ -17,6 +17,8 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Install serverless globally
         run: npm i -g serverless
 
       - name: Build
