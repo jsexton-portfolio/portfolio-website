@@ -1,3 +1,12 @@
+# 0.7.0-beta
+
+- Added Serverless technology card
+- Added extent of content to Home, About and Career Projects pages
+- Added email address to footer
+- Fixed bug causing project summary cards to spill out of container
+- Updated message on successful contact creation page
+- Removed period/timestamp from project cards. Replaced with type of project
+
 # 0.6.3-alpha
 
 - Removed message length requirement
