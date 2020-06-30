@@ -66,13 +66,10 @@ export const Home = (props) => {
       <Container className={classes.container}>
         <Typography variant="h3">About Me</Typography>
         <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          My name is Justin Sexton, I am a software developer in the Houston, Tx
+          area. I was born and raised in Houston. I started programming roughly
+          10 years ago when teaching myself to build various games in python.
+          Since then, I have never stopped learning.
         </Typography>
         <Link to="/about" className={classes.link}>
           <PortfolioButton>Read More</PortfolioButton>
@@ -83,26 +80,21 @@ export const Home = (props) => {
         <Typography variant="h3">Career</Typography>
         <Typography paragraph>
           I am currently employed at AIG as a software developer. Even with a
-          full time position I still find time to work on small side projects
-          and even in some cases large ones. Over the years I have started
-          mulitple projects working with many different languages and
-          technologies . Descriptions of all the projects can be found on the
+          full time position, I still manage to find the time to work on small
+          side projects and sometimes even large ones. Over the years I have
+          started mulitple projects working with many different languages and
+          technologies. Descriptions of all the projects can be found on the
           site along with links to their source code. Take a look!
         </Typography>
 
-        {/*
-        Something wrong is going on here. On smaller mobile devices something seems to be overflowing out of its container.
-        Trello Ticket: https://trello.com/c/MTlgomeU
-        Material UI: https://material-ui.com/components/grid/#limitations
-        */}
         <Grid
           container
-          spacing={0}
+          spacing={2}
           justify="center"
           className={classes.projectGrid}
         >
           {projects.map((card) => (
-            <>
+            <Grid key={card.title} item style={{ display: 'flex' }}>
               <ProjectSummaryCard
                 title={card.title}
                 description={card.description}
@@ -110,7 +102,7 @@ export const Home = (props) => {
                 projectLink={card.projectLink}
                 elevation={5}
               />
-            </>
+            </Grid>
           ))}
         </Grid>
       </Container>

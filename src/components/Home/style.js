@@ -26,6 +26,7 @@ export const useStyles = makeStyles((theme) => ({
     textDecoration: 'none'
   },
   projectGrid: {
-    marginTop: 50
+    marginTop: 50,
+    padding: 10
   }
 }))
