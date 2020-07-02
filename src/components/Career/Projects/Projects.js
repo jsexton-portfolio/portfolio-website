@@ -16,8 +16,8 @@ const projects = [
           Full stack web application acting as my personal portfolio. You are
           currently consuming this project. The application was designed and
           built from scratch to demonstrate my full stack web development
-          capabiltiies, share professional details about myself, help get in
-          contact with fellow developers and professional personal.
+          capabilities, share professional details about myself, help get in
+          contact with fellow developers and professional personnel.
         </Typography>
         <Typography
           variant="h6"
@@ -141,7 +141,7 @@ const projects = [
         <Typography variant="h5">Description</Typography>
         <Typography>
           Large collection of programming challenges in many different languages
-          accumulated over many years or programming. Completing challenges is
+          accumulated over many years of programming. Completing challenges is
           not only fun but helped me improve knowledge of a chosen language.
           Challenges were collected and solved from many different sites and
           forums. These sources are listed in the repository.

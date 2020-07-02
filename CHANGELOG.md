@@ -2,6 +2,7 @@
 
 - Footer email is now positioned for better mobile experience
 - Compressed images
+- Fixed typos
 
 # 0.7.0-beta
 

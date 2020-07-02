@@ -17,7 +17,7 @@ const projects = [
   {
     title: 'Personal Portfolio',
     description:
-      'Full stack web application acting as my personal portfolio. You are currently consuming this project. The application was designed and built from scratch to demonstrate my full stack web development capabiltiies, share professional details about myself, help get in contact with fellow developers and professional personal.',
+      'Full stack web application acting as my personal portfolio. You are currently consuming this project. The application was designed and built from scratch to demonstrate my full stack web development capabilities, share professional details about myself, help get in contact with fellow developers and professional personnel.',
     technologies: [
       technologies.JAVASCRIPT,
       technologies.TYPESCRIPT,
@@ -34,7 +34,7 @@ const projects = [
   {
     title: 'Programming Challenges',
     description:
-      'Large collection of programming challenges in many different languages accumulated over many years or programming. Completing challenges is not only fun but helped me improve knowledge of a chosen language. Challenges were collected and solved from many different sites and forums. These sources are listed in the repository.',
+      'Large collection of programming challenges in many different languages accumulated over many years of programming. Completing challenges is not only fun but helped me improve knowledge of a chosen language. Challenges were collected and solved from many different sites and forums. These sources are listed in the repository.',
     technologies: [
       technologies.JAVA,
       technologies.PYTHON,
