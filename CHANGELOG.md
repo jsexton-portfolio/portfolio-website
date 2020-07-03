@@ -1,4 +1,4 @@
-# 0.7.1-beta
+# 0.7.1-beta (Unreleased)
 
 - Footer email is now positioned for better mobile experience
 - Compressed images
