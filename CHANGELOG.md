@@ -3,6 +3,7 @@
 - Footer email is now positioned for better mobile experience
 - Compressed images
 - Fixed typos
+- Updated date in footer to be dynamically updated.
 
 # 0.7.0-beta
 
