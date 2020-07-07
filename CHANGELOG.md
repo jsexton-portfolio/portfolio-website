@@ -1,3 +1,7 @@
+# 0.7.2-beta
+
+- Added link preview
+
 # 0.7.1-beta
 
 - Footer email is now positioned for better mobile experience
