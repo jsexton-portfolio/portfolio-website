@@ -1,3 +1,7 @@
+# 1.0.0
+
+- Fixed bug that caused contact form to immediately contain error upon navigating to it on mobile.
+
 # 0.7.2-beta
 
 - Added link preview
