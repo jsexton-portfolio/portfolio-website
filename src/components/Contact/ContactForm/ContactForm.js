@@ -1,6 +1,6 @@
 import { Grid, TextField } from '@material-ui/core'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import formActions from '../../../actions/formActions'
 import { PortfolioButton } from '../../PortfolioButton/PortfolioButton'
@@ -23,6 +23,7 @@ export const ContactForm = ({
 }) => {
   const classes = useStyles()
   const dispatch = useDispatch()
+  const inputRef = useRef()
 
   const handleFieldChange = (event) => {
     const value = {}
@@ -39,6 +40,10 @@ export const ContactForm = ({
     dispatch(formActions.clear())
   }
 
+  useEffect(() => {
+    inputRef.current.focus()
+  }, [inputRef])
+
   return (
     <form noValidate onSubmit={handleFormSubmit}>
       <Grid container justify="center" direction="column">
@@ -49,7 +54,7 @@ export const ContactForm = ({
             label="Name"
             variant="outlined"
             type="text"
-            autoFocus
+            inputRef={inputRef}
             fullWidth
             required
             value={values.name}
