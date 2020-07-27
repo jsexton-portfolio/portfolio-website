@@ -148,11 +148,10 @@ const projects = [
         </Typography>
       </>
     ),
-    sourceLink: 'https://github.com/JSextonn/challenges',
+    sourceLink: 'https://github.com/JSextonn/all-challenges',
     technologies: [
       technologies.JAVA,
       technologies.PYTHON,
-      technologies.JAVASCRIPT,
       technologies.KOTLIN,
       technologies.CSHARP
     ]

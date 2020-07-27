@@ -1,6 +1,7 @@
-# 1.0.0
+# 0.8.0-beta
 
 - Fixed bug that caused contact form to immediately contain error upon navigating to it on mobile.
+- Updated challenges project link to new challenges repository.
 
 # 0.7.2-beta
 
