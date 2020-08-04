@@ -3,6 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { technologies } from '../../util/technologies'
 import { PortfolioButton } from '../PortfolioButton/PortfolioButton'
+import { HeroImage } from './HeroImage'
 import { ProjectSummaryCard } from './ProjectSummaryCard/ProjectSummaryCard'
 import { useStyles } from './style'
 
@@ -51,17 +52,7 @@ export const Home = (props) => {
 
   return (
     <div>
-      <div className={classes.imageContainer}>
-        <img
-          className={classes.heroImage}
-          src="/hero-sand.jpg"
-          alt="Hero"
-        ></img>
-
-        <Typography className={classes.heroText} variant="h2">
-          Justin Sexton
-        </Typography>
-      </div>
+      <HeroImage text={'Justin Sexton'} />
 
       <Container className={classes.container}>
         <Typography variant="h3">About Me</Typography>
