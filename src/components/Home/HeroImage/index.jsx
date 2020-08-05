@@ -2,10 +2,11 @@ import { makeStyles } from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 
-export const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({
   image: {
     height: '75vh',
-    width: '100vw'
+    width: '100vw',
+    backgroundColor: '#ee5522'
   }
 }))
 
