@@ -15,9 +15,9 @@ export const HeroImage = ({ text }) => {
   const [rotation, setRotation] = useState(0)
 
   useEffect(() => {
-    // Potential bug if rotation gets too large
     const interval = setInterval(() => {
-      setRotation(rotation - 0.05)
+      const newRotation = rotation > -360 ? rotation - 0.05 : 0
+      setRotation(newRotation)
     }, 10)
     return () => clearInterval(interval)
   }, [rotation])
