@@ -2,6 +2,7 @@
 
 - Fixed bug that caused contact form to immediately contain error upon navigating to it on mobile.
 - Updated challenges project link to new challenges repository.
+- Updated home hero image
 
 # 0.7.2-beta
 
