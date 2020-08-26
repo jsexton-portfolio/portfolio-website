@@ -1,3 +1,7 @@
+# 0.8.1-beta
+
+- Bumped portfolio api client version
+
 # 0.8.0-beta
 
 - Fixed bug that caused contact form to immediately contain error upon navigating to it on mobile.

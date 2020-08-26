@@ -1,4 +1,4 @@
-import { contact } from '@jsextonn/portfolio-api-client'
+import { portfolio } from '@jsextonn/portfolio-api-client'
 import { Container, Typography } from '@material-ui/core'
 import React, { useState } from 'react'
 import { ContactPreparation } from './ContactPreparation/ContactPreparation'
@@ -55,9 +55,9 @@ export const Contact = () => {
       }
     }
 
-    const messageClient = contact().messages
-    messageClient
-      .create(request)
+    const contactClient = portfolio().contact
+    contactClient
+      .createMessage(request)
       .then((message) => setActiveComponent(CONTACT_CREATION_STATE.SUCCESSFUL))
       .catch(() => setActiveComponent(CONTACT_CREATION_STATE.FAILED))
   }
