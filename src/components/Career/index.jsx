@@ -2,9 +2,9 @@ import { AppBar, Tab, Tabs } from '@material-ui/core'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import careerPageActions from '../../actions/careerPageActions'
-import { Projects } from './Projects/Projects'
-import { TabPanel } from './TabPanel/TabPanel'
-import { Technologies } from './Technologies/Technologies'
+import { Projects } from './Projects'
+import { TabPanel } from './TabPanel'
+import { Technologies } from './Technologies'
 
 export const Career = () => {
   const dispatch = useDispatch()

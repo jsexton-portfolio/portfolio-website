@@ -1,7 +1,7 @@
 import { Container, Grid, Typography } from '@material-ui/core'
 import React from 'react'
 import { technologies } from '../../../util/technologies'
-import { ProjectCard, projectTypes } from './ProjectCard/ProjectCard'
+import { ProjectCard, projectTypes } from './ProjectCard'
 
 const projects = [
   {
