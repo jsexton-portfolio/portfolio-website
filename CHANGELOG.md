@@ -1,4 +1,4 @@
-# 0.8.1-beta
+# 1.0.0
 
 - Bumped portfolio api client version
 - Added Rust technology card
