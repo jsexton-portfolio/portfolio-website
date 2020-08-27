@@ -1,10 +1,10 @@
 import React from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
-import { About } from '../components/About/About'
-import { Career } from '../components/Career/'
-import { Contact } from '../components/Contact/Contact'
-import { Home } from '../components/Home/Home'
-import { NotFound } from '../components/NotFound/NotFound'
+import { About } from '../components/About'
+import { Career } from '../components/Career'
+import { Contact } from '../components/Contact'
+import { Home } from '../components/Home'
+import { NotFound } from '../components/NotFound'
 
 export const Router = () => {
   return (

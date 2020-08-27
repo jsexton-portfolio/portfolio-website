@@ -1,6 +1,6 @@
 import { Container, Typography } from '@material-ui/core'
 import React from 'react'
-import { Portrait } from './Portrait/Portrait'
+import { Portrait } from './Portrait'
 import { useStyles } from './style'
 
 export const About = () => {

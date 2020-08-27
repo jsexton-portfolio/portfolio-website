@@ -8,9 +8,9 @@ import {
 } from '@material-ui/core'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { ConditionalRender } from '../../../ConditionalRender/ConditionalRender'
-import { PortfolioButton } from '../../../PortfolioButton/PortfolioButton'
-import { PortfolioChip } from '../../../PortfolioChip/PortfolioChip'
+import { ConditionalRender } from '../../../ConditionalRender'
+import { PortfolioButton } from '../../../PortfolioButton'
+import { PortfolioChip } from '../../../PortfolioChip'
 
 export const projectTypes = {
   LIBRARY: { value: 'Library' },

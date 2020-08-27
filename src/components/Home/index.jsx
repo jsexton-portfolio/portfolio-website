@@ -2,9 +2,9 @@ import { Container, Grid, Typography } from '@material-ui/core'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { technologies } from '../../util/technologies'
-import { PortfolioButton } from '../PortfolioButton/PortfolioButton'
+import { PortfolioButton } from '../PortfolioButton'
 import { HeroImage } from './HeroImage'
-import { ProjectSummaryCard } from './ProjectSummaryCard/ProjectSummaryCard'
+import { ProjectSummaryCard } from './ProjectSummaryCard'
 import { useStyles } from './style'
 
 const projects = [

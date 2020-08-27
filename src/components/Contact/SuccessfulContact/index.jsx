@@ -2,7 +2,7 @@ import { Container, Typography } from '@material-ui/core'
 import CheckIcon from '@material-ui/icons/Check'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { PortfolioButton } from '../../PortfolioButton/PortfolioButton'
+import { PortfolioButton } from '../../PortfolioButton'
 
 export const SuccessfulContact = () => {
   return (

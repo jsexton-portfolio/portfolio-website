@@ -1,7 +1,7 @@
 import { Container, Typography } from '@material-ui/core'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { ValidatedContactForm } from '../ContactForm/ValidatedContactForm/ValidatedContactForm'
+import { ValidatedContactForm } from '../ContactForm/ValidatedContactForm'
 import { useStyles } from './style'
 
 export const ContactPreparation = ({ ...props }) => {

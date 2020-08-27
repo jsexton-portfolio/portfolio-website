@@ -2,7 +2,7 @@ import { Container, Typography } from '@material-ui/core'
 import PriorityHighIcon from '@material-ui/icons/PriorityHigh'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { PortfolioButton } from '../../PortfolioButton/PortfolioButton'
+import { PortfolioButton } from '../../PortfolioButton'
 
 export const FailedContact = () => {
   return (

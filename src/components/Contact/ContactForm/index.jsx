@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import formActions from '../../../actions/formActions'
-import { PortfolioButton } from '../../PortfolioButton/PortfolioButton'
-import { ContactSelect } from './ContactSelect/ContactSelect'
+import { PortfolioButton } from '../../PortfolioButton'
+import { ContactSelect } from './ContactSelect'
 import { useStyles } from './style'
 
 const reasons = ['business', 'question', 'feedback', 'other']

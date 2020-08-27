@@ -1,7 +1,7 @@
 import { Container, Typography } from '@material-ui/core'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { PortfolioButton } from '../PortfolioButton/PortfolioButton'
+import { PortfolioButton } from '../PortfolioButton'
 import { useStyles } from './style'
 
 export const NotFound = () => {

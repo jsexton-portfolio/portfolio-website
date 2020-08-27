@@ -7,7 +7,7 @@ import {
 } from '@material-ui/core'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { PortfolioChip } from '../../PortfolioChip/PortfolioChip'
+import { PortfolioChip } from '../../PortfolioChip'
 import { useStyles } from './style'
 
 // Design decision to make project link required.

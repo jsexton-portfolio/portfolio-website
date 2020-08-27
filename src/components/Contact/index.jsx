@@ -1,10 +1,10 @@
 import { portfolio } from '@jsextonn/portfolio-api-client'
 import { Container, Typography } from '@material-ui/core'
 import React, { useState } from 'react'
-import { ContactPreparation } from './ContactPreparation/ContactPreparation'
-import { FailedContact } from './FailedContact/FailedContact'
-import { SuccessfulContact } from './SuccessfulContact/SuccessfulContact'
-import { SuspendContact } from './SuspendContact/SuspendContact'
+import { ContactPreparation } from './ContactPreparation'
+import { FailedContact } from './FailedContact'
+import { SuccessfulContact } from './SuccessfulContact'
+import { SuspendContact } from './SuspendContact'
 
 const CONTACT_CREATION_STATE = {
   PREPARING: 'preparing',

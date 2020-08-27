@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import * as Yup from 'yup'
-import { ContactForm } from '../ContactForm'
+import { ContactForm } from '..'
 
 Yup.addMethod(Yup.string, 'phone', function () {
   return this.test({

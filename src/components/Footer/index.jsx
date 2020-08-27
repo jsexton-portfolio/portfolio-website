@@ -2,7 +2,7 @@ import { Container, Divider, Typography } from '@material-ui/core'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import React, { useEffect, useState } from 'react'
-import { ConditionalRender } from '../ConditionalRender/ConditionalRender'
+import { ConditionalRender } from '../ConditionalRender'
 import { useStyles } from './style'
 
 export const Footer = () => {
