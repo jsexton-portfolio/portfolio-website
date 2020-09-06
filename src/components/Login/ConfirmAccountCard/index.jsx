@@ -10,16 +10,14 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as Yup from 'yup'
+import { passwordPolicyRegex } from '../../../util/password'
 import { PortfolioButton } from '../../PortfolioButton'
 
 // Schema is static but requires additional context through yup options.
 // Additional context is the old password used when performing first authentication
 export const schema = Yup.object().shape({
   newPassword: Yup.string()
-    .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\^$*.[\]{}()?\-“!@#%&/,><’:;|_~`])\S{8,99}$/,
-      'Password must comply with password policy'
-    )
+    .matches(passwordPolicyRegex, 'Password must comply with password policy')
     .test(
       'new-and-old-password-should-defer',
       'New password should defer from old',

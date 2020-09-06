@@ -1,3 +1,8 @@
+# 1.1.0
+
+- Added login page
+- Added forgot password page
+
 # 1.0.0
 
 - Bumped portfolio api client version
