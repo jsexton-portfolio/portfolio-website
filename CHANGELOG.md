@@ -2,6 +2,7 @@
 
 - Added login page
 - Added forgot password page
+- Footer last updated field now uses latest release publish date
 
 # 1.0.0
 

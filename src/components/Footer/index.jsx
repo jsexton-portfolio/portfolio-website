@@ -12,11 +12,11 @@ export const Footer = () => {
   useEffect(() => {
     const getRepository = async () => {
       const response = await fetch(
-        'https://api.github.com/repos/jsexton-portfolio/portfolio-website'
+        'https://api.github.com/repos/jsexton-portfolio/portfolio-website/releases/latest'
       )
 
       const body = await response.json()
-      const date = new Date(body.pushed_at)
+      const date = new Date(body.published_at)
       const formattedDate = new Intl.DateTimeFormat('en-US').format(date)
       setDate(formattedDate)
     }
