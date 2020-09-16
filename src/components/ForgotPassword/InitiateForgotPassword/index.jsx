@@ -7,7 +7,7 @@ import {
   Typography
 } from '@material-ui/core'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as Yup from 'yup'
 import { PortfolioButton } from '../../PortfolioButton'
@@ -21,6 +21,7 @@ export const InitiateForgotPassword = ({ style, onSuccessfulInit }) => {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema)
   })
+  const usernameTextFieldRef = useRef()
 
   const onSubmit = (values) => {
     setSubmitting(true)
@@ -33,6 +34,10 @@ export const InitiateForgotPassword = ({ style, onSuccessfulInit }) => {
       })
       .catch(() => setSubmitting(false))
   }
+
+  useEffect(() => {
+    usernameTextFieldRef.current.focus()
+  }, [usernameTextFieldRef])
 
   return (
     <Container style={{ textAlign: 'center', ...style }}>
@@ -53,7 +58,10 @@ export const InitiateForgotPassword = ({ style, onSuccessfulInit }) => {
           helperText={errors.username ? errors.username.message : ''}
           error={Boolean(errors.username)}
           fullWidth
-          inputRef={register}
+          inputRef={(e) => {
+            usernameTextFieldRef.current = e
+            register(e)
+          }}
         />
 
         {submitting ? (
