@@ -1,5 +1,5 @@
 import React from 'react'
-import { technologies } from '../../../../util/technologies'
+import { technologies } from '../../../shared/technologies'
 import { TechnologyCard } from './TechnologyCard'
 
 export const JavaScriptCard = ({ ...other }) => {

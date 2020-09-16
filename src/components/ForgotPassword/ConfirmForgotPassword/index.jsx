@@ -11,8 +11,8 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as Yup from 'yup'
-import { passwordPolicyRegex } from '../../../util/password'
 import { PortfolioButton } from '../../PortfolioButton'
+import { passwordPolicyRegex } from '../../shared/passwords'
 
 export const schema = Yup.object().shape({
   confirmationCode: Yup.string().required(),

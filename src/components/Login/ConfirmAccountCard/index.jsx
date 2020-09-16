@@ -10,8 +10,8 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as Yup from 'yup'
-import { passwordPolicyRegex } from '../../../util/password'
 import { PortfolioButton } from '../../PortfolioButton'
+import { passwordPolicyRegex } from '../../shared/passwords'
 
 // Schema is static but requires additional context through yup options.
 // Additional context is the old password used when performing first authentication
