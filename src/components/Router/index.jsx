@@ -1,13 +1,14 @@
 import React from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
-import { About } from '../components/About'
-import { Career } from '../components/Career'
-import { Contact } from '../components/Contact'
-import { Dashboard } from '../components/Dashboard'
-import { ForgotPassword } from '../components/ForgotPassword'
-import { Home } from '../components/Home'
-import { Login } from '../components/Login'
-import { NotFound } from '../components/NotFound'
+import { About } from '../About'
+import { AuthenticatedRoute } from '../AuthenticatedRoute'
+import { Career } from '../Career'
+import { Contact } from '../Contact'
+import { Dashboard } from '../Dashboard'
+import { ForgotPassword } from '../ForgotPassword'
+import { Home } from '../Home'
+import { Login } from '../Login'
+import { NotFound } from '../NotFound'
 
 export const Router = () => {
   return (
@@ -31,7 +32,7 @@ export const Router = () => {
       <Route path="/contact" component={Contact} />
       <Route path="/login" component={Login} />
       <Route path="/forgot-password" component={ForgotPassword} />
-      <Route path="/dashboard" component={Dashboard} />
+      <AuthenticatedRoute path="/dashboard" component={Dashboard} />
       <Route component={NotFound} />
     </Switch>
   )
