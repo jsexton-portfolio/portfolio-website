@@ -2,6 +2,7 @@ import { Grid } from '@material-ui/core'
 import React, { useState } from 'react'
 import ReactCardFlip from 'react-card-flip'
 import { useHistory } from 'react-router-dom'
+import { setAccessToken } from '../shared/authentication'
 import { ConfirmAccountCard } from './ConfirmAccountCard'
 import { LoginCard } from './LoginCard'
 
@@ -17,7 +18,7 @@ const CardOrchestrator = () => {
     <ReactCardFlip isFlipped={isFlipped}>
       <LoginCard
         onLoginSuccess={(tokens) => {
-          // Need to store tokens
+          setAccessToken(tokens.idToken)
           history.push('/dashboard')
         }}
         onForgotPassword={() => history.push('/forgot-password')}
@@ -30,7 +31,7 @@ const CardOrchestrator = () => {
       <ConfirmAccountCard
         credentials={credentials}
         onConfirmSuccess={(tokens) => {
-          // Need to store tokens
+          setAccessToken(tokens.idToken)
           history.push('/dashboard')
         }}
       />
