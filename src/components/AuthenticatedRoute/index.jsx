@@ -15,6 +15,5 @@ export const AuthenticatedRoute = ({ component: Component, ...others }) => {
 }
 
 AuthenticatedRoute.propTypes = {
-  component: PropTypes.node.isRequired,
-  authenticated: PropTypes.bool
+  component: PropTypes.elementType.isRequired
 }
