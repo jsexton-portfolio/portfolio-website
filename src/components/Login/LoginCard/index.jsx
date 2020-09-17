@@ -1,5 +1,4 @@
 import { yupResolver } from '@hookform/resolvers'
-import { portfolio } from '@jsextonn/portfolio-api-client'
 import {
   Button,
   CircularProgress,
@@ -10,9 +9,10 @@ import {
 } from '@material-ui/core'
 import Alert from '@material-ui/lab/Alert'
 import PropTypes from 'prop-types'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import * as Yup from 'yup'
+import { useProfile } from '../../../hooks/profile'
 import { PortfolioButton } from '../../PortfolioButton'
 
 export const schema = Yup.object().shape({
@@ -25,35 +25,22 @@ export const LoginCard = ({
   onForgotPassword,
   onConfirmAccount
 }) => {
-  const [submitting, setSubmitting] = useState(false)
-  const [authenticationError, setAuthenticationError] = useState(false)
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema)
   })
   const usernameRef = useRef()
+  const { login, loading, loginError } = useProfile()
 
   const onSubmit = (values) => {
-    setAuthenticationError(false)
-    setSubmitting(true)
-    const securityClient = portfolio().security
-    securityClient
-      .login({ body: { ...values } })
-      .then((response) => {
-        setSubmitting(false)
-        // If the login response was successful but no tokens were provided this means the
-        // account needs to be confirmed before requests can be authenticated with the
-        // accounts credentials
-        const data = response.data.data
-        if (data) {
-          onLoginSuccess(data)
+    login(values.username, values.password).then(({ success, tokens }) => {
+      if (success) {
+        if (tokens) {
+          onLoginSuccess(tokens)
         } else {
           onConfirmAccount(values)
         }
-      })
-      .catch(() => {
-        setSubmitting(false)
-        setAuthenticationError(true)
-      })
+      }
+    })
   }
 
   useEffect(() => {
@@ -76,7 +63,7 @@ export const LoginCard = ({
           label="Username"
           variant="outlined"
           type="text"
-          disabled={submitting}
+          disabled={loading}
           helperText={errors.username ? errors.username.message : ''}
           error={Boolean(errors.username)}
           fullWidth
@@ -93,14 +80,14 @@ export const LoginCard = ({
           label="Password"
           variant="outlined"
           type="password"
-          disabled={submitting}
+          disabled={loading}
           helperText={errors.password ? errors.password.message : ''}
           error={Boolean(errors.password)}
           fullWidth
           inputRef={register}
         />
 
-        {submitting ? (
+        {loading ? (
           <CircularProgress
             size={35}
             style={{ color: 'black', marginTop: 20 }}
@@ -112,9 +99,7 @@ export const LoginCard = ({
         )}
       </form>
 
-      {authenticationError && (
-        <Alert severity="error">Authentication Failed</Alert>
-      )}
+      {loginError && <Alert severity="error">Authentication Failed</Alert>}
       <Divider style={{ marginTop: 10 }} />
       <Button onClick={onForgotPassword} style={{ marginTop: 10 }}>
         Forgot Password?
