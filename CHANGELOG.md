@@ -3,6 +3,7 @@
 - Added login page
 - Added forgot password page
 - Footer last updated field now uses latest release publish date
+- Chalice link now opens tab with Chalice new site instead of chalice's old site
 
 # 1.0.0
 

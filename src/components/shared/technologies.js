@@ -13,7 +13,7 @@ export const technologies = {
   },
   CHALICE: {
     name: 'Chalice',
-    link: 'https://chalice.readthedocs.io/en/latest/'
+    link: 'https://aws.github.io/chalice/index'
   },
   CSHARP: {
     name: 'C#',
