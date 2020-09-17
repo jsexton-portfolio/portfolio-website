@@ -1,7 +1,6 @@
 import React from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import { About } from '../About'
-import { AuthenticatedRoute } from '../AuthenticatedRoute'
 import { Career } from '../Career'
 import { Contact } from '../Contact'
 import { Dashboard } from '../Dashboard'
@@ -9,6 +8,7 @@ import { ForgotPassword } from '../ForgotPassword'
 import { Home } from '../Home'
 import { Login } from '../Login'
 import { NotFound } from '../NotFound'
+import { AuthenticatedRoute } from './AuthenticatedRoute'
 
 export const Router = () => {
   return (
