@@ -17,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
   stepper: {
     marginTop: 10,
     [theme.breakpoints.between('sm', 'xl')]: {
-      marginLeft: '15%',
-      marginRight: '15%'
+      marginLeft: '10%',
+      marginRight: '10%'
     }
   }
 }))
@@ -67,7 +67,11 @@ export const ForgotPassword = () => {
         Password Reset
       </Typography>
 
-      <Stepper activeStep={activeStep} className={classes.stepper}>
+      <Stepper
+        activeStep={activeStep}
+        className={classes.stepper}
+        alternativeLabel
+      >
         {steps.map((step, index) => {
           return (
             <Step key={index}>
