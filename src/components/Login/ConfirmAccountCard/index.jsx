@@ -1,4 +1,5 @@
 import { yupResolver } from '@hookform/resolvers'
+import { portfolio } from '@jsextonn/portfolio-api-client'
 import {
   CircularProgress,
   Paper,
@@ -6,10 +7,9 @@ import {
   Typography
 } from '@material-ui/core'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as Yup from 'yup'
-import { useProfile } from '../../../hooks/profile'
 import { PortfolioButton } from '../../PortfolioButton'
 import { passwordPolicyRegex } from '../../shared/passwords'
 
@@ -32,6 +32,7 @@ export const schema = Yup.object().shape({
 })
 
 export const ConfirmAccountCard = ({ onConfirmSuccess, credentials }) => {
+  const [submitting, setSubmitting] = useState(false)
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
     context: {
@@ -39,18 +40,23 @@ export const ConfirmAccountCard = ({ onConfirmSuccess, credentials }) => {
     }
   })
 
-  const { confirmAccount, loading } = useProfile()
-
   const onSubmit = (values) => {
-    confirmAccount(
-      credentials.username,
-      credentials.password,
-      values.newPassword
-    ).then(({ success, tokens }) => {
-      if (success) {
+    setSubmitting(true)
+    const securityClient = portfolio().security
+    securityClient
+      .confirmAccount({
+        body: {
+          username: credentials.username,
+          oldPassword: credentials.password,
+          newPassword: values.newPassword
+        }
+      })
+      .then((response) => {
+        setSubmitting(false)
+        const tokens = response.data.data
         onConfirmSuccess(tokens)
-      }
-    })
+      })
+      .catch(() => setSubmitting(false))
   }
 
   return (
@@ -95,7 +101,7 @@ export const ConfirmAccountCard = ({ onConfirmSuccess, credentials }) => {
           inputRef={register}
         />
 
-        {loading ? (
+        {submitting ? (
           <CircularProgress
             size={35}
             style={{ color: 'black', marginTop: 20 }}
