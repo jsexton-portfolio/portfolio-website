@@ -1,4 +1,10 @@
-import { Step, StepLabel, Stepper, Typography } from '@material-ui/core'
+import {
+  makeStyles,
+  Step,
+  StepLabel,
+  Stepper,
+  Typography
+} from '@material-ui/core'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { ConfirmForgotPassword } from './ConfirmForgotPassword'
@@ -7,10 +13,21 @@ import { SuccessfulForgotPassword } from './SuccessfulForgotPassword'
 
 const steps = ['Initiate', 'Confirm', 'Success']
 
+const useStyles = makeStyles((theme) => ({
+  stepper: {
+    marginTop: 10,
+    [theme.breakpoints.between('sm', 'xl')]: {
+      marginLeft: '15%',
+      marginRight: '15%'
+    }
+  }
+}))
+
 export const ForgotPassword = () => {
   const [activeStep, setActiveStep] = useState(0)
   const [username, setUsername] = useState('')
   const history = useHistory()
+  const classes = useStyles()
 
   const getStepComponent = (index) => {
     switch (index) {
@@ -50,7 +67,7 @@ export const ForgotPassword = () => {
         Password Reset
       </Typography>
 
-      <Stepper activeStep={activeStep} style={{ marginTop: 10 }}>
+      <Stepper activeStep={activeStep} className={classes.stepper}>
         {steps.map((step, index) => {
           return (
             <Step key={index}>
