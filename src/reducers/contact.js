@@ -1,14 +1,16 @@
 import { CLEAR_CONTACT_FORM, UPDATE_CONTACT_FORM } from '../actions/contact'
 import { createReducer } from './util'
 
+const initialFormState = {
+  name: '',
+  email: '',
+  phone: '',
+  reason: '',
+  message: ''
+}
+
 const initialState = {
-  form: {
-    name: '',
-    email: '',
-    phone: '',
-    reason: '',
-    message: ''
-  }
+  form: initialFormState
 }
 
 export default createReducer(initialState, {
@@ -24,7 +26,9 @@ export default createReducer(initialState, {
   [CLEAR_CONTACT_FORM]: (state, payload) => {
     return {
       ...state,
-      ...initialState
+      form: {
+        ...initialFormState
+      }
     }
   }
 })
