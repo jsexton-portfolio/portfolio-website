@@ -2,7 +2,7 @@ import { Grid, TextField } from '@material-ui/core'
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef } from 'react'
 import { useDispatch } from 'react-redux'
-import formActions from '../../../actions/formActions'
+import contactActions from '../../../actions/contact'
 import { PortfolioButton } from '../../PortfolioButton'
 import { ContactSelect } from './ContactSelect'
 import { useStyles } from './style'
@@ -29,7 +29,7 @@ export const ContactForm = ({
     const value = {}
     value[event.target.name] = event.target.value
 
-    dispatch(formActions.update(value))
+    dispatch(contactActions.updateContactForm(value))
     handleChange(event)
   }
 
@@ -37,7 +37,7 @@ export const ContactForm = ({
     event.preventDefault()
 
     handleSubmit()
-    dispatch(formActions.clear())
+    dispatch(contactActions.clearContactForm())
   }
 
   useEffect(() => {

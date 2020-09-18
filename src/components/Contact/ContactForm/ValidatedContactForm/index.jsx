@@ -25,7 +25,7 @@ const contactSchema = Yup.object().shape({
 })
 
 export const ValidatedContactForm = ({ onSubmit }) => {
-  const initialValues = useSelector((state) => state.contactForm)
+  const initialValues = useSelector((state) => state.contact.form)
 
   return (
     <Formik

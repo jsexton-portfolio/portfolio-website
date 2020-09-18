@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import { careerPage } from './careerPage'
-import { contactForm } from './contactForm'
+import career from './career'
+import contact from './contact'
 
 const rootReducer = combineReducers({
-  contactForm,
-  careerPage
+  contact,
+  career
 })
 
 export default rootReducer
