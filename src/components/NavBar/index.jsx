@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
+import AssessmentIcon from '@material-ui/icons/Assessment'
 import HelpIcon from '@material-ui/icons/Help'
 import HomeIcon from '@material-ui/icons/Home'
 import MailIcon from '@material-ui/icons/Mail'
@@ -46,6 +47,14 @@ const navigationItems = [
   }
 ]
 
+const authGuardedNavigationItems = [
+  {
+    path: '/dashboard',
+    icon: <AssessmentIcon />,
+    text: 'Dashboard'
+  }
+]
+
 export const NavBar = () => {
   const classes = useStyles()
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
@@ -69,6 +78,12 @@ export const NavBar = () => {
     dispatch(authActions.clearAuthInfo())
   }
 
+  const getNavigationItems = () => {
+    return isAuthenticated
+      ? navigationItems.concat(authGuardedNavigationItems)
+      : navigationItems
+  }
+
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.bar}>
@@ -80,7 +95,7 @@ export const NavBar = () => {
           </Typography>
 
           <div className={classes.navigationItems}>
-            {navigationItems.map((item, i) => (
+            {getNavigationItems().map((item, i) => (
               <Button color="inherit" to={item.path} component={Link} key={i}>
                 {item.text}
               </Button>
@@ -109,7 +124,7 @@ export const NavBar = () => {
           onClick={toggleDrawer(false)}
           onKeyDown={toggleDrawer(false)}
         >
-          {navigationItems.map((item, i) => (
+          {getNavigationItems().map((item, i) => (
             <Link
               to={item.path}
               style={{ color: 'black', textDecoration: 'none' }}
