@@ -9,6 +9,7 @@ import { Home } from '../Home'
 import { Login } from '../Login'
 import { NotFound } from '../NotFound'
 import { AuthenticatedRoute } from './AuthenticatedRoute'
+import { NonAuthenticatedRoute } from './NonAuthenticatedRoute'
 
 export const Router = () => {
   return (
@@ -30,8 +31,8 @@ export const Router = () => {
       <Route path="/about" component={About} />
       <Route path="/career" component={Career} />
       <Route path="/contact" component={Contact} />
-      <Route path="/login" component={Login} />
       <Route path="/forgot-password" component={ForgotPassword} />
+      <NonAuthenticatedRoute path="/login" component={Login} />
       <AuthenticatedRoute path="/dashboard" component={Dashboard} />
       <Route component={NotFound} />
     </Switch>

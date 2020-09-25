@@ -1,4 +1,7 @@
-import { CLEAR_CONTACT_FORM, UPDATE_CONTACT_FORM } from '../actions/contact'
+import {
+  CLEAR_CONTACT_FORM,
+  UPDATE_CONTACT_FORM
+} from '../actions/contact/types'
 import { createReducer } from './util'
 
 const initialFormState = {

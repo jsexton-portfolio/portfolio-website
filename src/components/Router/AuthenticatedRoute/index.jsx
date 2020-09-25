@@ -1,19 +1,16 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Redirect, Route } from 'react-router-dom'
-import { isAuthenticated } from '../../shared/authentication'
+import { AuthenticatedRouteHelper } from '../AuthenticatedRouteHelper'
 
-export const AuthenticatedRoute = ({ component: Component, ...others }) => {
-  return (
-    <Route
-      {...others}
-      render={(props) =>
-        isAuthenticated() ? <Component {...props} /> : <Redirect to="/login" />
-      }
-    />
-  )
+/**
+ * Wrapper around the Route component. Only renders the route with the given component if the user is authenticated.
+ * Otherwise, the page will be redirected to the given route, /login by default.
+ */
+export const AuthenticatedRoute = ({ redirect = '/login', ...others }) => {
+  return <AuthenticatedRouteHelper redirect={redirect} {...others} />
 }
 
 AuthenticatedRoute.propTypes = {
-  component: PropTypes.elementType.isRequired
+  component: PropTypes.elementType.isRequired,
+  redirect: PropTypes.string
 }

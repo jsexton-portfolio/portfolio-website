@@ -1,4 +1,4 @@
-export const UPDATE_TAB_INDEX = 'UPDATE_TAB_INDEX'
+import { UPDATE_TAB_INDEX } from './types'
 
 const updateTabIndex = (value) => {
   return {

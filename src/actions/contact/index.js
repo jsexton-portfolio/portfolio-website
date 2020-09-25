@@ -1,5 +1,4 @@
-export const UPDATE_CONTACT_FORM = 'UPDATE_CONTACT_FORM'
-export const CLEAR_CONTACT_FORM = 'CLEAR_CONTACT_FORM'
+import { CLEAR_CONTACT_FORM, UPDATE_CONTACT_FORM } from './types'
 
 const updateContactForm = (form) => {
   return {

@@ -45,7 +45,10 @@ export const LoginCard = ({
         // accounts credentials
         const data = response.data.data
         if (data) {
-          onLoginSuccess(data)
+          onLoginSuccess({
+            username: values.username,
+            tokens: data
+          })
         } else {
           onConfirmAccount(values)
         }

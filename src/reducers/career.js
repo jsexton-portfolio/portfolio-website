@@ -1,4 +1,4 @@
-import { UPDATE_TAB_INDEX } from '../actions/career'
+import { UPDATE_TAB_INDEX } from '../actions/career/types'
 import { createReducer } from './util'
 
 const initialState = {
