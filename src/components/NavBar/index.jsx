@@ -20,6 +20,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import authActions from '../../actions/auth'
+import dashboardActions from '../../actions/dashboard'
 import { AvatarMenuButton } from './AvatarMenuButton'
 import { DrawerAuthenticatedSection } from './DrawerAuthenticatedSection'
 import { useStyles } from './style'
@@ -76,6 +77,7 @@ export const NavBar = () => {
 
   const handleLogout = () => {
     dispatch(authActions.clearAuthInfo())
+    dispatch(dashboardActions.clearContactMessages())
   }
 
   const getNavigationItems = () => {

@@ -1,4 +1,4 @@
-import { UPDATE_TAB_INDEX } from '../actions/career/types'
+import { UPDATE_CAREER_TAB_INDEX } from '../actions/career/types'
 import { createReducer } from './util'
 
 const initialState = {
@@ -6,7 +6,7 @@ const initialState = {
 }
 
 export default createReducer(initialState, {
-  [UPDATE_TAB_INDEX]: (state, payload) => {
+  [UPDATE_CAREER_TAB_INDEX]: (state, payload) => {
     return {
       tabIndex: payload
     }
