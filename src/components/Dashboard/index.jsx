@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import dashboardActions from '../../actions/dashboard'
 import { AnalyticsViewer } from './AnalyticsViewer'
 import { ContactMessageViewer } from './ContactMessageViewer'
+import { FetchMessagesError } from './FetchMessagesError'
 
 const TabPanel = ({ children, value, index, ...other }) => {
   return (
@@ -35,6 +36,7 @@ export const Dashboard = () => {
   const tabIndex = useSelector((state) => state.dashboard.tabIndex)
   const dispatch = useDispatch()
   const [loading, setLoading] = useState(false)
+  const [loadingError, setLoadingError] = useState(false)
 
   useEffect(() => {
     // Values have already been populated, no need retrieving the messages again
@@ -43,7 +45,8 @@ export const Dashboard = () => {
     }
 
     retrieveContactMessages()
-  })
+    // eslint-disable-next-line
+  }, [])
 
   const retrieveContactMessages = () => {
     setLoading(true)
@@ -55,11 +58,18 @@ export const Dashboard = () => {
         dispatch(dashboardActions.populateContactMessages(messages))
         setLoading(false)
       })
-      .catch(() => setLoading(false))
+      .catch(() => {
+        setLoading(false)
+        setLoadingError(true)
+      })
   }
 
   const handleChange = (event, newValue) => {
     dispatch(dashboardActions.updateTabIndex(newValue))
+  }
+
+  if (loadingError) {
+    return <FetchMessagesError />
   }
 
   return (
@@ -90,13 +100,19 @@ export const Dashboard = () => {
           </div>
         ) : (
           <>
-            <TabPanel value={tabIndex} index={0}>
-              <ContactMessageViewer messages={messages} />
-            </TabPanel>
+            {loadingError ? (
+              <FetchMessagesError />
+            ) : (
+              <>
+                <TabPanel value={tabIndex} index={0}>
+                  <ContactMessageViewer messages={messages} />
+                </TabPanel>
 
-            <TabPanel value={tabIndex} index={1}>
-              <AnalyticsViewer messages={messages} />
-            </TabPanel>
+                <TabPanel value={tabIndex} index={1}>
+                  <AnalyticsViewer messages={messages} />
+                </TabPanel>
+              </>
+            )}
           </>
         )}
       </div>

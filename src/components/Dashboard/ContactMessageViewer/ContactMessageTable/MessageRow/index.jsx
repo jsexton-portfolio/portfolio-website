@@ -78,7 +78,7 @@ export const MessageRow = ({ message }) => {
         </TableCell>
         <TableCell>{trimValue(message.sender.alias, 16)}</TableCell>
         <TableCell>{message.reason}</TableCell>
-        <TableCell>{trimValue(message.message, 100)}</TableCell>
+        <TableCell>{trimValue(message.message, 75)}</TableCell>
         <TableCell>{cleanDate(message.timeCreated)}</TableCell>
       </TableRow>
       <TableRow>

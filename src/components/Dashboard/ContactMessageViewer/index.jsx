@@ -2,7 +2,7 @@ import { Container, InputAdornment, TextField } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import useDebounce from '../../../hooks/deboounce'
+import { useDebounce } from '../../../hooks/deboounce'
 import { ContactMessageTable } from './ContactMessageTable'
 
 export const ContactMessageViewer = ({ messages }) => {
