@@ -5,6 +5,9 @@
 - Footer last updated field now uses latest release publish date
 - Chalice link now opens tab with Chalice new site instead of chalice's old site
 - Authenticated info is now persisted
+- Added dashboard
+  - Message viewer
+  - Analytics viewer
 
 # 1.0.0
 
