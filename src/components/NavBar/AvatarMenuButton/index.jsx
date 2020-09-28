@@ -6,7 +6,7 @@ import {
   MenuItem,
   withStyles
 } from '@material-ui/core'
-import AccountBoxIcon from '@material-ui/icons/AccountBox'
+import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
@@ -58,7 +58,7 @@ export const AvatarMenuButton = ({ username, onLogout }) => {
         aria-haspopup="true"
         onClick={handleClick}
       >
-        <AccountBoxIcon style={{ color: 'white' }} />
+        <AccountCircleIcon style={{ color: 'white' }} />
       </IconButton>
       <StyledMenu
         id="simple-menu"
