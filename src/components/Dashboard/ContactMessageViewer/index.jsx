@@ -2,15 +2,17 @@ import { Container, InputAdornment, TextField } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { useDebounce } from '../../../hooks/deboounce'
+import { useDebounce } from '../../../hooks/debounce'
 import { ContactMessageTable } from './ContactMessageTable'
 
 export const ContactMessageViewer = ({ messages }) => {
   const [search, setSearch] = useState('')
-  const debouncedSearch = useDebounce(search, 80)
+  // Debounce is required because when continuously escaping characters in the search bar
+  // the DOM is updated when records are ready to be displayed after escaping enough characters.
+  // This causes lag and forces the text field cursor to freeze for roughly a second. The debounce
+  // allows the two components to seemingly update simultaneously.
+  const debouncedSearch = useDebounce(search, 50)
 
-  // TODO: This needs to be optimized
-  //  The search is quick but when clearing the search slight lag is experienced
   const filter = (messages) => {
     if (debouncedSearch === '') {
       return messages
@@ -26,6 +28,10 @@ export const ContactMessageViewer = ({ messages }) => {
       }
 
       if (message.reason.toLowerCase().includes(debouncedSearch)) {
+        return true
+      }
+
+      if (message.message.toLowerCase().includes(debouncedSearch)) {
         return true
       }
 
