@@ -9,9 +9,11 @@ import {
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link, Route, Switch, useHistory } from 'react-router-dom'
 import dashboardActions from '../../actions/dashboard'
 import { AnalyticsViewer } from './AnalyticsViewer'
-import { ContactMessageViewer } from './ContactMessageViewer'
+import { ContactMessagesViewer } from './ContactMessagesViewer'
+import { Dash } from './Dash'
 import { FetchMessagesError } from './FetchMessagesError'
 
 const TabPanel = ({ children, value, index, ...other }) => {
@@ -30,10 +32,11 @@ TabPanel.propTypes = {
 
 export const Dashboard = () => {
   const jwt = useSelector((state) => state.auth.tokens.idToken)
+  const history = useHistory()
   const { messages, timePopulated } = useSelector(
     (state) => state.dashboard.messageInfo
   )
-  const tabIndex = useSelector((state) => state.dashboard.tabIndex)
+  // const tabIndex = useSelector((state) => state.dashboard.tabIndex)
   const dispatch = useDispatch()
   const [loading, setLoading] = useState(false)
   const [loadingError, setLoadingError] = useState(false)
@@ -64,10 +67,6 @@ export const Dashboard = () => {
       })
   }
 
-  const handleChange = (event, newValue) => {
-    dispatch(dashboardActions.updateTabIndex(newValue))
-  }
-
   if (loadingError) {
     return <FetchMessagesError />
   }
@@ -77,8 +76,7 @@ export const Dashboard = () => {
       <div style={{ flexGrow: 1 }}>
         <AppBar position="static" style={{ backgroundColor: 'black' }}>
           <Tabs
-            value={tabIndex}
-            onChange={handleChange}
+            value={history.location.pathname}
             TabIndicatorProps={{
               style: {
                 backgroundColor: '#ffffff'
@@ -86,8 +84,27 @@ export const Dashboard = () => {
             }}
             centered
           >
-            <Tab disabled={loading} label="Messages" />
-            <Tab disabled={loading} label="Analytics" />
+            <Tab
+              disabled={loading}
+              label="Dash"
+              component={Link}
+              value="/dashboard"
+              to="/dashboard"
+            />
+            <Tab
+              disabled={loading}
+              label="Messages"
+              component={Link}
+              value="/dashboard/messages"
+              to="/dashboard/messages"
+            />
+            <Tab
+              disabled={loading}
+              label="Analytics"
+              component={Link}
+              value="/dashboard/analytics"
+              to="/dashboard/analytics"
+            />
           </Tabs>
         </AppBar>
 
@@ -104,13 +121,17 @@ export const Dashboard = () => {
               <FetchMessagesError />
             ) : (
               <>
-                <TabPanel value={tabIndex} index={0}>
-                  <ContactMessageViewer messages={messages} />
-                </TabPanel>
-
-                <TabPanel value={tabIndex} index={1}>
-                  <AnalyticsViewer messages={messages} />
-                </TabPanel>
+                <Switch>
+                  <Route exact path="/dashboard">
+                    <Dash />
+                  </Route>
+                  <Route path="/dashboard/messages">
+                    <ContactMessagesViewer messages={messages} />
+                  </Route>
+                  <Route path="/dashboard/analytics">
+                    <AnalyticsViewer messages={messages} />
+                  </Route>
+                </Switch>
               </>
             )}
           </>

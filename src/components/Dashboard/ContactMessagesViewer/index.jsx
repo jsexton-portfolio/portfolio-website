@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import { useDebounce } from '../../../hooks/debounce'
 import { ContactMessageTable } from './ContactMessageTable'
 
-export const ContactMessageViewer = ({ messages }) => {
+export const ContactMessagesViewer = ({ messages }) => {
   const [search, setSearch] = useState('')
   // Debounce is required because when continuously escaping characters in the search bar
   // the DOM is updated when records are ready to be displayed after escaping enough characters.
@@ -71,6 +71,6 @@ export const ContactMessageViewer = ({ messages }) => {
   )
 }
 
-ContactMessageViewer.propTypes = {
+ContactMessagesViewer.propTypes = {
   messages: PropTypes.array.isRequired
 }

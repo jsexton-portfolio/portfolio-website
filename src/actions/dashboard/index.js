@@ -1,15 +1,4 @@
-import {
-  CLEAR_CONTACT_MESSAGES,
-  POPULATE_CONTACT_MESSAGES,
-  UPDATE_DASHBOARD_TAB_INDEX
-} from './types'
-
-const updateTabIndex = (tabIndex) => {
-  return {
-    type: UPDATE_DASHBOARD_TAB_INDEX,
-    payload: tabIndex
-  }
-}
+import { CLEAR_CONTACT_MESSAGES, POPULATE_CONTACT_MESSAGES } from './types'
 
 const populateContactMessages = (messages) => {
   return {
@@ -29,7 +18,6 @@ const clearContactMessages = () => {
 }
 
 export default {
-  updateTabIndex,
   populateContactMessages,
   clearContactMessages
 }

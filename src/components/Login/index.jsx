@@ -17,7 +17,6 @@ const CardOrchestrator = () => {
   // Component makes use of React Flip Card component. See link below for docs.
   // https://www.npmjs.com/package/react-card-flip
 
-  // TODO: Make sure redirect when user is authenticated
   return (
     <ReactCardFlip isFlipped={isFlipped}>
       <LoginCard
