@@ -54,7 +54,10 @@ export const ConfirmAccountCard = ({ onConfirmSuccess, credentials }) => {
       .then((response) => {
         setSubmitting(false)
         const tokens = response.data.data
-        onConfirmSuccess(tokens)
+        onConfirmSuccess({
+          username: credentials.username,
+          tokens: tokens
+        })
       })
       .catch(() => setSubmitting(false))
   }
