@@ -6,29 +6,15 @@ import {
   Tabs,
   Typography
 } from '@material-ui/core'
-import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, Route, Switch, useHistory } from 'react-router-dom'
 import dashboardActions from '../../actions/dashboard'
 import { AnalyticsViewer } from './AnalyticsViewer'
 import { ContactMessagesViewer } from './ContactMessagesViewer'
+import { ContactMessageViewer } from './ContactMessagesViewer/ContactMessageViewer'
 import { Dash } from './Dash'
 import { FetchMessagesError } from './FetchMessagesError'
-
-const TabPanel = ({ children, value, index, ...other }) => {
-  return (
-    <div hidden={value !== index} role="tabpanel" {...other}>
-      {children}
-    </div>
-  )
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired
-}
 
 export const Dashboard = () => {
   const jwt = useSelector((state) => state.auth.tokens.idToken)
@@ -67,6 +53,16 @@ export const Dashboard = () => {
       })
   }
 
+  // Maps the single message route to use the same tab as the plural message component.
+  const getTabsValue = (pathname) => {
+    const pattern = new RegExp('/dashboard/messages/\\w+')
+    if (pattern.test(pathname)) {
+      return '/dashboard/messages'
+    }
+
+    return pathname
+  }
+
   if (loadingError) {
     return <FetchMessagesError />
   }
@@ -76,7 +72,7 @@ export const Dashboard = () => {
       <div style={{ flexGrow: 1 }}>
         <AppBar position="static" style={{ backgroundColor: 'black' }}>
           <Tabs
-            value={history.location.pathname}
+            value={getTabsValue(history.location.pathname)}
             TabIndicatorProps={{
               style: {
                 backgroundColor: '#ffffff'
@@ -125,8 +121,11 @@ export const Dashboard = () => {
                   <Route exact path="/dashboard">
                     <Dash />
                   </Route>
-                  <Route path="/dashboard/messages">
+                  <Route exact path="/dashboard/messages">
                     <ContactMessagesViewer messages={messages} />
+                  </Route>
+                  <Route path="/dashboard/messages/:id">
+                    <ContactMessageViewer />
                   </Route>
                   <Route path="/dashboard/analytics">
                     <AnalyticsViewer messages={messages} />
