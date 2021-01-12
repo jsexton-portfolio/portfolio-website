@@ -12,7 +12,7 @@ import { Link, Route, Switch, useHistory } from 'react-router-dom'
 import dashboardActions from '../../actions/dashboard'
 import { AnalyticsViewer } from './AnalyticsViewer'
 import { ContactMessagesViewer } from './ContactMessagesViewer'
-import { ContactMessageViewer } from './ContactMessagesViewer/ContactMessageViewer'
+import { ContactMessageViewer } from './ContactMessageViewer'
 import { Dash } from './Dash'
 import { FetchMessagesError } from './FetchMessagesError'
 
@@ -124,7 +124,7 @@ export const Dashboard = () => {
                   <Route exact path="/dashboard/messages">
                     <ContactMessagesViewer messages={messages} />
                   </Route>
-                  <Route path="/dashboard/messages/:id">
+                  <Route exact path="/dashboard/messages/:messageId">
                     <ContactMessageViewer />
                   </Route>
                   <Route path="/dashboard/analytics">
