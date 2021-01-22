@@ -24,7 +24,7 @@ export const Dashboard = () => {
   )
   // const tabIndex = useSelector((state) => state.dashboard.tabIndex)
   const dispatch = useDispatch()
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [loadingError, setLoadingError] = useState(false)
 
   useEffect(() => {
@@ -38,7 +38,6 @@ export const Dashboard = () => {
   }, [])
 
   const retrieveContactMessages = () => {
-    setLoading(true)
     const contactClient = portfolio().contact
     contactClient
       .findMessages({ jwt: jwt })
