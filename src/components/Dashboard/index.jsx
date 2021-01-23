@@ -22,7 +22,6 @@ export const Dashboard = () => {
   const { messages, timePopulated } = useSelector(
     (state) => state.dashboard.messageInfo
   )
-  // const tabIndex = useSelector((state) => state.dashboard.tabIndex)
   const dispatch = useDispatch()
   const [loading, setLoading] = useState(true)
   const [loadingError, setLoadingError] = useState(false)
@@ -30,6 +29,7 @@ export const Dashboard = () => {
   useEffect(() => {
     // Values have already been populated, no need retrieving the messages again
     if (timePopulated) {
+      setLoading(false)
       return
     }
 
