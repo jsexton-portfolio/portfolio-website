@@ -126,7 +126,7 @@ export const Dashboard = () => {
                   <Route exact path="/dashboard/messages/:messageId">
                     <ContactMessageViewer />
                   </Route>
-                  <Route path="/dashboard/analytics">
+                  <Route exact path="/dashboard/analytics">
                     <AnalyticsViewer messages={messages} />
                   </Route>
                 </Switch>

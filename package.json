@@ -14,6 +14,7 @@
     "formik": "^2.1.4",
     "react": "^16.13.1",
     "react-card-flip": "^1.0.11",
+    "react-charts": "^2.0.0-beta.7",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.6.0",
     "react-redux": "^7.2.0",
