@@ -70,7 +70,7 @@ export const Home = (props) => {
       <Container className={classes.container}>
         <Typography variant="h3">Career</Typography>
         <Typography paragraph>
-          I am currently employed at AIG as a software developer. Even with a
+          I am currently employed at Slalom as a software developer. Even with a
           full time position, I still manage to find the time to work on small
           side projects and sometimes even large ones. Over the years I have
           started mulitple projects working with many different languages and
