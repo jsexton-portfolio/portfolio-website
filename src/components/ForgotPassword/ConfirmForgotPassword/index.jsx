@@ -1,5 +1,4 @@
 import { yupResolver } from '@hookform/resolvers'
-import { portfolio } from '@jsextonn/portfolio-api-client'
 import {
   CircularProgress,
   Container,
@@ -7,6 +6,7 @@ import {
   TextField,
   Typography
 } from '@material-ui/core'
+import axios from 'axios'
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -37,15 +37,15 @@ export const ConfirmForgotPassword = ({
 
   const onSubmit = (values) => {
     setSubmitting(true)
-    const securityClient = portfolio().security
-    securityClient
-      .confirmForgotPassword({
-        body: {
-          username: username,
-          confirmationCode: values.confirmationCode,
-          newPassword: values.newPassword
-        }
-      })
+    axios({
+      method: 'post',
+      url: 'https://api.justinsexton.net/security/confirm-forgot-password',
+      data: {
+        username: username,
+        confirmationCode: values.confirmationCode,
+        newPassword: values.newPassword
+      }
+    })
       .then(() => {
         setSubmitting(false)
         onSuccessfulReset()

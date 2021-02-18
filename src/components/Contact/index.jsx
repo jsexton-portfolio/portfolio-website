@@ -1,5 +1,5 @@
-import { portfolio } from '@jsextonn/portfolio-api-client'
 import { Container, Typography } from '@material-ui/core'
+import axios from 'axios'
 import React, { useState } from 'react'
 import { ContactPreparation } from './ContactPreparation'
 import { FailedContact } from './FailedContact'
@@ -43,22 +43,22 @@ export const Contact = () => {
     // Contact message API POST body
     // https://github.com/jsexton-portfolio/contact-message-service
     const request = {
-      body: {
-        message: values.message,
-        reason: values.reason,
-        sender: {
-          alias: values.name,
-          // API does not accept empty strings for phone numbers. They are seen as invalid and will yield 400.
-          phone: values.phone !== '' ? values.phone : null,
-          email: values.email
-        }
+      message: values.message,
+      reason: values.reason,
+      sender: {
+        alias: values.name,
+        // API does not accept empty strings for phone numbers. They are seen as invalid and will yield 400.
+        phone: values.phone !== '' ? values.phone : null,
+        email: values.email
       }
     }
 
-    const contactClient = portfolio().contact
-    contactClient
-      .createMessage(request)
-      .then((message) => setActiveComponent(CONTACT_CREATION_STATE.SUCCESSFUL))
+    axios({
+      method: 'post',
+      url: 'https://api.justinsexton.net/contact/mail',
+      data: request
+    })
+      .then((response) => setActiveComponent(CONTACT_CREATION_STATE.SUCCESSFUL))
       .catch(() => setActiveComponent(CONTACT_CREATION_STATE.FAILED))
   }
 

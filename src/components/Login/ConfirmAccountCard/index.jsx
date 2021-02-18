@@ -1,11 +1,11 @@
 import { yupResolver } from '@hookform/resolvers'
-import { portfolio } from '@jsextonn/portfolio-api-client'
 import {
   CircularProgress,
   Paper,
   TextField,
   Typography
 } from '@material-ui/core'
+import axios from 'axios'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -42,15 +42,15 @@ export const ConfirmAccountCard = ({ onConfirmSuccess, credentials }) => {
 
   const onSubmit = (values) => {
     setSubmitting(true)
-    const securityClient = portfolio().security
-    securityClient
-      .confirmAccount({
-        body: {
-          username: credentials.username,
-          oldPassword: credentials.password,
-          newPassword: values.newPassword
-        }
-      })
+    axios({
+      method: 'post',
+      url: 'https://api.justinsexton.net/security/confirm-account',
+      data: {
+        username: credentials.username,
+        oldPassword: credentials.password,
+        newPassword: values.newPassword
+      }
+    })
       .then((response) => {
         setSubmitting(false)
         const tokens = response.data.data

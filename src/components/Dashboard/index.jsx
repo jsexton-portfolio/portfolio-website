@@ -1,4 +1,3 @@
-import { portfolio } from '@jsextonn/portfolio-api-client'
 import {
   AppBar,
   CircularProgress,
@@ -6,6 +5,7 @@ import {
   Tabs,
   Typography
 } from '@material-ui/core'
+import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, Route, Switch, useHistory } from 'react-router-dom'
@@ -38,9 +38,13 @@ export const Dashboard = () => {
   }, [])
 
   const retrieveContactMessages = () => {
-    const contactClient = portfolio().contact
-    contactClient
-      .findMessages({ jwt: jwt })
+    axios({
+      method: 'get',
+      url: 'https://api.justinsexton.net/contact/mail',
+      headers: {
+        Authorization: 'Bearer ' + jwt
+      }
+    })
       .then((response) => {
         const messages = response.data.data.contactMessages
         dispatch(dashboardActions.populateContactMessages(messages))

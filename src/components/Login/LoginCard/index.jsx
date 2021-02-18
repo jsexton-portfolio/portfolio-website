@@ -1,5 +1,4 @@
 import { yupResolver } from '@hookform/resolvers'
-import { portfolio } from '@jsextonn/portfolio-api-client'
 import {
   Button,
   CircularProgress,
@@ -9,6 +8,7 @@ import {
   Typography
 } from '@material-ui/core'
 import Alert from '@material-ui/lab/Alert'
+import axios from 'axios'
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -35,9 +35,11 @@ export const LoginCard = ({
   const onSubmit = (values) => {
     setAuthenticationError(false)
     setSubmitting(true)
-    const securityClient = portfolio().security
-    securityClient
-      .login({ body: { ...values } })
+    axios({
+      method: 'post',
+      url: 'https://api.justinsexton.net/security/login',
+      data: { ...values }
+    })
       .then((response) => {
         setSubmitting(false)
         // If the login response was successful but no tokens were provided this means the

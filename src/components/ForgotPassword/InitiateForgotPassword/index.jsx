@@ -1,11 +1,11 @@
 import { yupResolver } from '@hookform/resolvers'
-import { portfolio } from '@jsextonn/portfolio-api-client'
 import {
   CircularProgress,
   Container,
   TextField,
   Typography
 } from '@material-ui/core'
+import axios from 'axios'
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -25,9 +25,11 @@ export const InitiateForgotPassword = ({ style, onSuccessfulInit }) => {
 
   const onSubmit = (values) => {
     setSubmitting(true)
-    const securityClient = portfolio().security
-    securityClient
-      .initForgotPassword({ body: { username: values.username } })
+    axios({
+      method: 'post',
+      url: 'https://api.justinsexton.net/security/init-forgot-password',
+      data: { username: values.username }
+    })
       .then(() => {
         setSubmitting(false)
         onSuccessfulInit(values.username)
