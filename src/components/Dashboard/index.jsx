@@ -122,7 +122,7 @@ export const Dashboard = () => {
               <>
                 <Switch>
                   <Route exact path="/dashboard">
-                    <Dash />
+                    <Dash messages={messages} />
                   </Route>
                   <Route exact path="/dashboard/messages">
                     <ContactMessagesViewer messages={messages} />
