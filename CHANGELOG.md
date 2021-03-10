@@ -1,6 +1,7 @@
 # 1.1.1
 
 - Updated copyright year
+- Expired authentication details are now automatically updateds
 
 # 1.1.0
 
