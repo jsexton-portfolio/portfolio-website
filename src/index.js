@@ -31,10 +31,7 @@ axios.interceptors.response.use(
   (error) => {
     const originalRequest = error.config
 
-    console.log('Error response received')
-    console.log(`Has Retried: ${Boolean(originalRequest._retry)}`)
     if (error.response.status === 401 && !originalRequest._retry) {
-      console.log('401 response received and trying to re-authenticate')
       originalRequest._retry = true
       const state = store.getState()
       const refreshToken = state.auth.tokens.refreshToken
@@ -49,6 +46,7 @@ axios.interceptors.response.use(
               tokens: tokens
             })
           )
+          originalRequest.headers.Authorization = `Bearer ${tokens.idToken}`
           return axios(originalRequest)
         })
         .catch(() => {
