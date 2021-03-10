@@ -56,7 +56,7 @@ export const Footer = () => {
         )}
       />
       <Typography>justinsexton.dev@gmail.com</Typography>
-      <Typography>&copy; 2020 Justin Sexton</Typography>
+      <Typography>&copy; 2021 Justin Sexton</Typography>
     </div>
   )
 }

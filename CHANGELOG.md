@@ -1,3 +1,7 @@
+# 1.1.1
+
+- Updated copyright year
+
 # 1.1.0
 
 ## Features
