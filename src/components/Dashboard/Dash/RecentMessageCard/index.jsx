@@ -1,19 +1,32 @@
 import { Card, CardContent, Grid, Typography } from '@material-ui/core'
 import MailIcon from '@material-ui/icons/Mail'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 export const RecentMessageCard = ({ message, onClick, elevate = true }) => {
   const [elevation, setElevation] = React.useState(5)
+  const [received, setReceived] = useState()
+
+  useEffect(() => {
+    const getDaysAgo = (date) => {
+      const now = new Date()
+      return Math.floor((now - date) / (1000 * 60 * 60 * 24))
+    }
+
+    const date = new Date(message.timeCreated)
+    const daysAgo = getDaysAgo(date)
+
+    if (daysAgo < 1) {
+      setReceived('Today')
+    } else if (daysAgo >= 1 && daysAgo < 2) {
+      setReceived('Yesterday')
+    } else {
+      setReceived(`${daysAgo} days ago`)
+    }
+  }, [message])
 
   const handleMouseOver = () => elevate && setElevation(12)
   const handleMouseOut = () => elevate && setElevation(5)
-
-  const daysAgo = (dateString) => {
-    const now = new Date()
-    const date = new Date(dateString)
-    return Math.floor((now - date) / (1000 * 60 * 60 * 24))
-  }
 
   return (
     <Card
@@ -28,9 +41,7 @@ export const RecentMessageCard = ({ message, onClick, elevate = true }) => {
           <Typography style={{ marginRight: '12px' }}>
             {message.sender.alias}
           </Typography>
-          <Typography variant="caption">
-            {daysAgo(message.timeCreated)} days ago
-          </Typography>
+          <Typography variant="caption">{received}</Typography>
         </Grid>
 
         <Typography style={{ marginTop: '8px' }}>{message.message}</Typography>

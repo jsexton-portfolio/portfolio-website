@@ -1,3 +1,7 @@
+# 1.1.3
+
+- Fixed bug causing the time received on the recent message card to be displayed incorrectly
+
 # 1.1.2
 
 - Updated API routes to new routes
