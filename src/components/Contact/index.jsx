@@ -55,7 +55,7 @@ export const Contact = () => {
 
     axios({
       method: 'post',
-      url: 'https://api.justinsexton.net/contact/mail',
+      url: 'https://api.justinsexton.net/mail',
       data: request
     })
       .then((response) => setActiveComponent(CONTACT_CREATION_STATE.SUCCESSFUL))

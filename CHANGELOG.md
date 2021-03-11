@@ -1,3 +1,7 @@
+# 1.1.2
+
+- Updated API routes to new routes
+
 # 1.1.1
 
 - Updated copyright year

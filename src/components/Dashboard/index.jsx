@@ -40,7 +40,7 @@ export const Dashboard = () => {
   const retrieveContactMessages = () => {
     axios({
       method: 'get',
-      url: 'https://api.justinsexton.net/contact/mail',
+      url: 'https://api.justinsexton.net/mail',
       headers: {
         Authorization: 'Bearer ' + jwt
       }
